@@ -17,7 +17,6 @@ return new class extends Migration
             $table->longText('description');
             $table->string('duration');
             $table->string('cost');
-            $table->foreignId('id_category')->references('id')->on('category');
             $table->timestamps();
         });
     }

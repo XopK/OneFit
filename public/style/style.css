@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+
+* {
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+.container{
+    color:rgb(49, 26, 5);
+}
+
+body {
+    background-color: rgb(235, 231, 199);
+}
+.nav-link{
+    color:rgb(49, 26, 5);
+}
+
+footer{
+    width: 99vw;
+}
+footer img{
+    width: 100%;
+}
+.application-img{
+    color: white;
+    background-image: url('/images/file.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.card-body{
+    background-color: rgb(255, 240, 226);
+}
