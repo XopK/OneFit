@@ -43,7 +43,7 @@
         <div class="row row-cols-1 row-cols-md-3 g-3 mt-3">
             <div class="col d-flex justify-content-center">
                 <a href="#" style="text-decoration: none">
-                    <div class="card border-0" style="width: 18rem;">
+                    <div class="card shadow border-0" style="width: 18rem;">
                         <img src="/images/img.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Массаж</h5>
@@ -58,7 +58,7 @@
             </div>
             <div class="col d-flex justify-content-center">
                 <a href="#" style="text-decoration: none">
-                    <div class="card border-0" style="width: 18rem;">
+                    <div class="card shadow border-0" style="width: 18rem;">
                         <img src="/images/img.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Массаж</h5>
@@ -73,7 +73,7 @@
             </div>
             <div class="col d-flex justify-content-center">
                 <a href="#" style="text-decoration: none">
-                    <div class="card border-0" style="width: 18rem;">
+                    <div class="card shadow border-0" style="width: 18rem;">
                         <img src="/images/img.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Массаж</h5>
@@ -88,7 +88,7 @@
             </div>
             <div class="col d-flex justify-content-center">
                 <a href="#" style="text-decoration: none">
-                    <div class="card border-0" style="width: 18rem;">
+                    <div class="card shadow border-0" style="width: 18rem;">
                         <img src="/images/img.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Массаж</h5>
@@ -103,7 +103,7 @@
             </div>
             <div class="col d-flex justify-content-center">
                 <a href="#" style="text-decoration: none">
-                    <div class="card border-0" style="width: 18rem;">
+                    <div class="card shadow border-0" style="width: 18rem;">
                         <img src="/images/img.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Массаж</h5>
@@ -118,7 +118,7 @@
             </div>
             <div class="col d-flex justify-content-center">
                 <a href="#" style="text-decoration: none">
-                    <div class="card border-0" style="width: 18rem;">
+                    <div class="card shadow border-0" style="width: 18rem;">
                         <img src="/images/img.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Массаж</h5>
@@ -140,13 +140,15 @@
                 <p class="col-md-8 fs-4">Готовы окунуться в мир релаксации и красоты? Наша команда OneFit готова
                     сделать ваше пребывание у нас незабываемым. Заполните форму, чтобы забронировать свое место в
                     нашем уютном уголке роскоши.</p>
-                <button class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#application" type="button">Подать заявку</button>
+                <button class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#application"
+                    type="button">Подать заявку</button>
             </div>
         </div>
     </div>
-   
+    
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </body>
 <x-application></x-application>
+
 </html>

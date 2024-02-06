@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title_procedure');
             $table->longText('description');
-            $table->string('duration');
+            $table->integer('duration');
             $table->string('cost');
             $table->timestamps();
         });

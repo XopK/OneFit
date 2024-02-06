@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
-            $table->string('comment');
+            $table->string('name_user');
+            $table->string('phone_user');
             $table->date('start_date');
             $table->date('end_date');
             $table->foreignId('id_procedure')->references('id')->on('spa_procedures');
-            $table->foreignId('id_user')->references('id')->on('users');
+            $table->foreignId('id_user')->nullable()->references('id')->on('users');
             $table->timestamps();
         });
     }
