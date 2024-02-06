@@ -40,11 +40,11 @@
     </div>
     <div class="container" style="margin-bottom: 50px">
         <h1 class="text-center">SPA-процедуры</h1>
-        <div class="row row-cols-1 row-cols-md-3 g-3 mt-3">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 mt-3">
             <div class="col d-flex justify-content-center">
                 <a href="#" style="text-decoration: none">
                     <div class="card shadow border-0" style="width: 18rem;">
-                        <img src="/images/img.png" class="card-img-top" alt="...">
+                        <img src="/images/img.png" class="card-img-top ind-card-img" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Массаж</h5>
                             <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе. Внимательно
@@ -133,7 +133,7 @@
             </div>
         </div>
     </div>
-    <div class="container" style="margin-top: 150px">
+    <div class="container" style="margin-top: 150px;margin-bottom:150px">
         <div class="application-img p-5 mb-4 bg-body-tertiary rounded-5">
             <div class="container-fluid py-5">
                 <h1 class="display-5 fw-bold">Оставьте заявку на наш уникальный опыт заботы о себе!</h1>
@@ -145,10 +145,7 @@
             </div>
         </div>
     </div>
-
-    <footer>
-        <img src="images/MountainsPNGPhotos_yapfiles.ru.png" alt="ujhs">
-    </footer>
+    <x-footer></x-footer>
     
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

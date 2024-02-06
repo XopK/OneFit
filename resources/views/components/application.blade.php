@@ -1,6 +1,6 @@
 <div class="modal fade" id="application" tabindex="-1" aria-labelledby="application" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content border-0" style="background-color: rgb(252, 248, 211); color:rgb(49, 26, 5);">
+        <div class="modal-content border-0" style="background-color: rgb(241,235,222); color:rgb(49, 26, 5);">
             <div class="modal-header border-0">
                 <h1>Бронирование</h1>
                 <button type="button" class="btn-close focus-ring focus-ring-warning border-0" data-bs-dismiss="modal"
