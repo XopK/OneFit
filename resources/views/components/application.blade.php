@@ -14,7 +14,7 @@
                         <label for="floatingInput">Ваше имя</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control focus-ring focus-ring-warning border-0 phone"
+                        <input type="text" name="phone" class="phone form-control focus-ring focus-ring-warning border-0"
                             id="floatingInput" placeholder="Номер телефона">
                         <label for="floatingInput">Номер телефона</label>
                     </div>
