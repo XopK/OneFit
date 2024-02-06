@@ -3,7 +3,8 @@
         <div class="modal-content border-0" style="background-color: rgb(252, 248, 211); color:rgb(49, 26, 5);">
             <div class="modal-header border-0">
                 <h1>Бронирование</h1>
-                <button type="button" class="btn-close focus-ring focus-ring-warning border-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close focus-ring focus-ring-warning border-0" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
             </div>
             <form action="">
                 <div class="modal-body border-0">
@@ -16,6 +17,14 @@
                         <input type="text" class="form-control focus-ring focus-ring-warning border-0 phone"
                             id="floatingInput" placeholder="Номер телефона">
                         <label for="floatingInput">Номер телефона</label>
+                    </div>
+                    <div class="mb-3">
+                        <select class="form-select form-select-sm p-3 focus-ring focus-ring-warning border-0" aria-label="Small select example">
+                            <option disabled selected>Выберите процедуру</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center border-0">
