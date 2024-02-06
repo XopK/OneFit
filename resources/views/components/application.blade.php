@@ -18,14 +18,6 @@
                             id="floatingInput" placeholder="Номер телефона">
                         <label for="floatingInput">Номер телефона</label>
                     </div>
-                    <div class="mb-3">
-                        <select class="form-select form-select-sm p-3 focus-ring focus-ring-warning border-0" aria-label="Small select example">
-                            <option disabled selected>Выберите процедуру</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </div>
                 </div>
                 <div class="modal-footer justify-content-center border-0">
                     <button type="button" class="btn btn-warning btn-lg">Отправить</button>
