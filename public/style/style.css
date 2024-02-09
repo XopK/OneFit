@@ -9,14 +9,12 @@
 .container{
     color:rgb(49, 26, 5);
 }
-
 body {
     background-color: rgb(241,235,222);
 }
 .nav-link{
     color:rgb(49, 26, 5);
 }
-
 footer{
     width: 100%;
     background-color: rgb(60,60,60);
@@ -36,4 +34,7 @@ footer img{
 }
 .card{
     width: 100% !important;
+}
+.zigmund{
+    flex-grow: 0 !important;
 }

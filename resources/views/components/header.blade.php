@@ -19,5 +19,15 @@
                 </li>
             </ul>
         </div>
+        <div class="collapse zigmund navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Регистрация</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Авторизация</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
