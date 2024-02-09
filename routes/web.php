@@ -28,3 +28,11 @@ Route::get('/auth', function () {
 Route::get('/reg', function () {
     return view('reg');
 });
+Route::get('/admin', function () {
+    return view('admin.index');
+});
+
+Route::get('/admin/applications', function () {
+    return view('admin.applications');
+});
+
