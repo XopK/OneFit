@@ -11,6 +11,15 @@
 }
 body {
     background-color: rgb(241,235,222);
+    min-height: 100vh;
+}
+.main-block{
+    flex: 1 1 auto;
+}
+.wrapper{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 .nav-link{
     color:rgb(49, 26, 5);
@@ -37,4 +46,9 @@ footer img{
 }
 .zigmund{
     flex-grow: 0 !important;
+}
+.logo-footer{
+    font-size: 25px;
+    font-family: 'Orbitron', sans-serif;
+    color:rgb(255, 255, 255);
 }
