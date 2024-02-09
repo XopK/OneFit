@@ -13,7 +13,33 @@
 <body>
     <x-header></x-header>
     <div class="container">
-        
+        <form action="" method="POST">
+            <div class="mb-3">
+                <label for="InputName" class="form-label">Имя</label>
+                <input type="text" class="form-control focus-ring focus-ring-warning border-warning" id="InputName" name="name">
+            </div>
+            <div class="mb-3">
+                <label for="InputSurname" class="form-label">Фамилия</label>
+                <input type="text" class="form-control focus-ring focus-ring-warning border-warning" id="InputSurname" name="surname">
+            </div>
+            <div class="mb-3">
+                <label for="InputPhone" class="form-label">Номер телефона</label>
+                <input type="text" class="form-control focus-ring focus-ring-warning border-warning" id="InputPhone" name="phone">
+            </div>
+            <div class="mb-3">
+                <label for="InputEmail" class="form-label">Почта</label>
+                <input type="email" class="form-control focus-ring focus-ring-warning border-warning" id="InputEmail" name="email">
+            </div>
+            <div class="mb-3">
+                <label for="InputPassword" class="form-label">Пароль</label>
+                <input type="password" class="form-control focus-ring focus-ring-warning border-warning" id="InputPassword" name="password">
+            </div>
+            <div class="mb-3">
+                <label for="ConfPassword" class="form-label">Подтверждение пароля</label>
+                <input type="password" class="form-control focus-ring focus-ring-warning border-warning" id="ConfPassword" name="conf_password">
+            </div>
+            <button type="submit" class="btn btn-warning">Зарегистрироваться</button>
+        </form>
     </div>
 </body>
 </html>
