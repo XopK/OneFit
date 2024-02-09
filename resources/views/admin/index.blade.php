@@ -181,7 +181,7 @@
         </symbol>
     </svg>
 
-    <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
+    <header class="navbar bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="/admin">OneFit</a>
         <ul class="navbar-nav flex-row d-md-none">
             <li class="nav-item text-nowrap">
@@ -199,7 +199,7 @@
     <div class="container-fluid">
         <div class="row">
             <x-admin-header></x-admin-header>
-            <main id="showPage" class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <main id="showPage" class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-3">
                 <h1 class="h2">Новые заявки</h1>
                 <div class="table-responsive small">
                     <table class="table table-striped table-sm">
@@ -286,110 +286,86 @@
                     </table>
                 </div>
                 <h1 class="h2">Последние добавленые процедуры</h1>
-                <div class="procedures row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 mt-3">
-                            <div class="col d-flex justify-content-center">
-                                <a href="#" style="text-decoration: none">
-                                    <div class="card shadow border-0" style="width: 18rem;">
-                                        <img src="/images/img.png" class="card-img-top ind-card-img" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Массаж</h5>
-                                            <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
-                                                Внимательно
-                                                подобранные
-                                                техники массажа способны расслабить каждую мышцу, снять напряжение и
-                                                восстановить
-                                                энергию.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
+                <div class="procedures row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 ">
+                    <div class="col d-flex justify-content-center">
+                        <a href="#" style="text-decoration: none">
+                            <div class="card shadow border-0" style="width: 18rem;">
+                                <img src="/images/img.png" class="card-img-top ind-card-img" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Массаж</h5>
+                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
+                                        Внимательно
+                                        подобранные
+                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
+                                        восстановить
+                                        энергию.
+                                    </p>
+                                    <button class="btn btn-warning">Редактировать</button>
+                                    <button class="btn btn-danger">Удалить</button>
+                                </div>
                             </div>
-                            <div class="col d-flex justify-content-center">
-                                <a href="#" style="text-decoration: none">
-                                    <div class="card shadow border-0" style="width: 18rem;">
-                                        <img src="/images/img.png" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Массаж</h5>
-                                            <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
-                                                Внимательно
-                                                подобранные
-                                                техники массажа способны расслабить каждую мышцу, снять напряжение и
-                                                восстановить
-                                                энергию.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
+                        </a>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <a href="#" style="text-decoration: none">
+                            <div class="card shadow border-0" style="width: 18rem;">
+                                <img src="/images/img.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Массаж</h5>
+                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
+                                        Внимательно
+                                        подобранные
+                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
+                                        восстановить
+                                        энергию.
+                                    </p>
+                                    <button class="btn btn-warning">Редактировать</button>
+                                    <button class="btn btn-danger">Удалить</button>
+                                </div>
                             </div>
-                            <div class="col d-flex justify-content-center">
-                                <a href="#" style="text-decoration: none">
-                                    <div class="card shadow border-0" style="width: 18rem;">
-                                        <img src="/images/img.png" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Массаж</h5>
-                                            <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
-                                                Внимательно
-                                                подобранные
-                                                техники массажа способны расслабить каждую мышцу, снять напряжение и
-                                                восстановить
-                                                энергию.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
+                        </a>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <a href="#" style="text-decoration: none">
+                            <div class="card shadow border-0" style="width: 18rem;">
+                                <img src="/images/img.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Массаж</h5>
+                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
+                                        Внимательно
+                                        подобранные
+                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
+                                        восстановить
+                                        энергию.
+                                    </p>
+                                    <button class="btn btn-warning">Редактировать</button>
+                                    <button class="btn btn-danger">Удалить</button>
+                                </div>
                             </div>
-                            <div class="col d-flex justify-content-center">
-                                <a href="#" style="text-decoration: none">
-                                    <div class="card shadow border-0" style="width: 18rem;">
-                                        <img src="/images/img.png" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Массаж</h5>
-                                            <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
-                                                Внимательно
-                                                подобранные
-                                                техники массажа способны расслабить каждую мышцу, снять напряжение и
-                                                восстановить
-                                                энергию.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
+                        </a>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <a href="#" style="text-decoration: none">
+                            <div class="card shadow border-0" style="width: 18rem;">
+                                <img src="/images/img.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Массаж</h5>
+                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
+                                        Внимательно
+                                        подобранные
+                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
+                                        восстановить
+                                        энергию.
+                                    </p>
+                                    <button class="btn btn-warning">Редактировать</button>
+                                    <button class="btn btn-danger">Удалить</button>
+                                </div>
                             </div>
-                            <div class="col d-flex justify-content-center">
-                                <a href="#" style="text-decoration: none">
-                                    <div class="card shadow border-0" style="width: 18rem;">
-                                        <img src="/images/img.png" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Массаж</h5>
-                                            <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
-                                                Внимательно
-                                                подобранные
-                                                техники массажа способны расслабить каждую мышцу, снять напряжение и
-                                                восстановить
-                                                энергию.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col d-flex justify-content-center">
-                                <a href="#" style="text-decoration: none">
-                                    <div class="card shadow border-0" style="width: 18rem;">
-                                        <img src="/images/img.png" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Массаж</h5>
-                                            <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
-                                                Внимательно
-                                                подобранные
-                                                техники массажа способны расслабить каждую мышцу, снять напряжение и
-                                                восстановить
-                                                энергию.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                        </a>
+                    </div>
                 </div>
+                <h1 class="h2 mt-3">Добавление сотрудника</h1>
+                form
             </main>
         </div>
     </div>
