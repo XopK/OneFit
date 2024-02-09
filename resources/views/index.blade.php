@@ -145,8 +145,14 @@
                 <p class="col-md-8 fs-4">Готовы окунуться в мир релаксации и красоты? Наша команда OneFit готова
                     сделать ваше пребывание у нас незабываемым. Заполните форму, чтобы забронировать свое место в
                     нашем уютном уголке роскоши.</p>
-                <button class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#application"
-                    type="button">Подать заявку</button>
+                @guest
+                <a href="/reg" class="btn btn-warning btn-lg">Зарегистрироваться</a>
+                @endguest
+                @auth
+                <a href="" class="btn btn-warning btn-lg">Записаться</a>
+                @endauth
+                {{-- <button class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#application"
+                    type="button">Подать заявку</button> --}}
             </div>
         </div>
     </div>
