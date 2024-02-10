@@ -36,3 +36,11 @@ Route::get('/admin/applications', function () {
     return view('admin.applications');
 });
 
+Route::get('/admin/procedures', function () {
+    return view('admin.procedures');
+});
+
+Route::get('/admin/employees', function () {
+    return view('admin.employees');
+});
+

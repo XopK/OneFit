@@ -202,172 +202,201 @@
             <main id="showPage" class="col-md-9 col-lg-10 px-md-4">
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Заявки</h1>
-                    <div class="dropdown">
-                        <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Статусы 
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Ожидание</a></li>
-                            <li><a class="dropdown-item" href="#">Принято</a></li>
-                            <li><a class="dropdown-item" href="#">Отклонено</a></li>
-                        </ul>
-                    </div>
+                    <h1 class="h2">Процедуры</h1>
+                    <a href="" class="btn btn-success">+Добавить</a>
                 </div>
-
-                <div class="table-responsive small">
-                    <table class="table table-striped table-sm">
-                        <thead>
-                            <tr>
-                                <th scope="col">№</th>
-                                <th scope="col">Имя пользователя</th>
-                                <th scope="col">Номер телефона</th>
-                                <th scope="col">Дата бронирования</th>
-                                <th scope="col">Дата окнончания</th>
-                                <th scope="col">Процедура</th>
-                                <th scope="col">Статус</th>
-                                <th scope="col">Дата подачи</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Даня тортиков</td>
-                                <td>+789987558</td>
-                                <td>21.02.2024 12:00</td>
-                                <td>21.02.2024 15:00</td>
-                                <td>Массаж</td>
-                                <td>Ожидание</td>
-                                <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Даня тортиков</td>
-                                <td>+789987558</td>
-                                <td>21.02.2024 12:00</td>
-                                <td>21.02.2024 15:00</td>
-                                <td>Массаж</td>
-                                <td>Ожидание</td>
-                                <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Даня тортиков</td>
-                                <td>+789987558</td>
-                                <td>21.02.2024 12:00</td>
-                                <td>21.02.2024 15:00</td>
-                                <td>Массаж</td>
-                                <td>Ожидание</td>
-                                <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Даня тортиков</td>
-                                <td>+789987558</td>
-                                <td>21.02.2024 12:00</td>
-                                <td>21.02.2024 15:00</td>
-                                <td>Массаж</td>
-                                <td>Ожидание</td>
-                                <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Даня тортиков</td>
-                                <td>+789987558</td>
-                                <td>21.02.2024 12:00</td>
-                                <td>21.02.2024 15:00</td>
-                                <td>Массаж</td>
-                                <td>Ожидание</td>
-                                <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Даня тортиков</td>
-                                <td>+789987558</td>
-                                <td>21.02.2024 12:00</td>
-                                <td>21.02.2024 15:00</td>
-                                <td>Массаж</td>
-                                <td>Ожидание</td>
-                                <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Даня тортиков</td>
-                                <td>+789987558</td>
-                                <td>21.02.2024 12:00</td>
-                                <td>21.02.2024 15:00</td>
-                                <td>Массаж</td>
-                                <td>Ожидание</td>
-                                <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Даня тортиков</td>
-                                <td>+789987558</td>
-                                <td>21.02.2024 12:00</td>
-                                <td>21.02.2024 15:00</td>
-                                <td>Массаж</td>
-                                <td>Ожидание</td>
-                                <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Даня тортиков</td>
-                                <td>+789987558</td>
-                                <td>21.02.2024 12:00</td>
-                                <td>21.02.2024 15:00</td>
-                                <td>Массаж</td>
-                                <td>Ожидание</td>
-                                <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Даня тортиков</td>
-                                <td>+789987558</td>
-                                <td>21.02.2024 12:00</td>
-                                <td>21.02.2024 15:00</td>
-                                <td>Массаж</td>
-                                <td>Ожидание</td>
-                                <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Даня тортиков</td>
-                                <td>+789987558</td>
-                                <td>21.02.2024 12:00</td>
-                                <td>21.02.2024 15:00</td>
-                                <td>Массаж</td>
-                                <td>Ожидание</td>
-                                <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
-                            </tr>
-                            
-                        </tbody>
-                    </table>
+                <div class="procedures row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 ">
+                    <div class="col d-flex justify-content-center">
+                        <a href="#" style="text-decoration: none">
+                            <div class="card shadow border-0" style="width: 18rem;">
+                                <img src="/images/img.png" class="card-img-top ind-card-img" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Массаж</h5>
+                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
+                                        Внимательно
+                                        подобранные
+                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
+                                        восстановить
+                                        энергию.
+                                    </p>
+                                    <button class="btn btn-warning">Редактировать</button>
+                                    <button class="btn btn-danger">Удалить</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <a href="#" style="text-decoration: none">
+                            <div class="card shadow border-0" style="width: 18rem;">
+                                <img src="/images/img.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Массаж</h5>
+                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
+                                        Внимательно
+                                        подобранные
+                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
+                                        восстановить
+                                        энергию.
+                                    </p>
+                                    <button class="btn btn-warning">Редактировать</button>
+                                    <button class="btn btn-danger">Удалить</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <a href="#" style="text-decoration: none">
+                            <div class="card shadow border-0" style="width: 18rem;">
+                                <img src="/images/img.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Массаж</h5>
+                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
+                                        Внимательно
+                                        подобранные
+                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
+                                        восстановить
+                                        энергию.
+                                    </p>
+                                    <button class="btn btn-warning">Редактировать</button>
+                                    <button class="btn btn-danger">Удалить</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <a href="#" style="text-decoration: none">
+                            <div class="card shadow border-0" style="width: 18rem;">
+                                <img src="/images/img.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Массаж</h5>
+                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
+                                        Внимательно
+                                        подобранные
+                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
+                                        восстановить
+                                        энергию.
+                                    </p>
+                                    <button class="btn btn-warning">Редактировать</button>
+                                    <button class="btn btn-danger">Удалить</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <a href="#" style="text-decoration: none">
+                            <div class="card shadow border-0" style="width: 18rem;">
+                                <img src="/images/img.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Массаж</h5>
+                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
+                                        Внимательно
+                                        подобранные
+                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
+                                        восстановить
+                                        энергию.
+                                    </p>
+                                    <button class="btn btn-warning">Редактировать</button>
+                                    <button class="btn btn-danger">Удалить</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <a href="#" style="text-decoration: none">
+                            <div class="card shadow border-0" style="width: 18rem;">
+                                <img src="/images/img.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Массаж</h5>
+                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
+                                        Внимательно
+                                        подобранные
+                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
+                                        восстановить
+                                        энергию.
+                                    </p>
+                                    <button class="btn btn-warning">Редактировать</button>
+                                    <button class="btn btn-danger">Удалить</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <a href="#" style="text-decoration: none">
+                            <div class="card shadow border-0" style="width: 18rem;">
+                                <img src="/images/img.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Массаж</h5>
+                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
+                                        Внимательно
+                                        подобранные
+                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
+                                        восстановить
+                                        энергию.
+                                    </p>
+                                    <button class="btn btn-warning">Редактировать</button>
+                                    <button class="btn btn-danger">Удалить</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <a href="#" style="text-decoration: none">
+                            <div class="card shadow border-0" style="width: 18rem;">
+                                <img src="/images/img.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Массаж</h5>
+                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
+                                        Внимательно
+                                        подобранные
+                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
+                                        восстановить
+                                        энергию.
+                                    </p>
+                                    <button class="btn btn-warning">Редактировать</button>
+                                    <button class="btn btn-danger">Удалить</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <a href="#" style="text-decoration: none">
+                            <div class="card shadow border-0" style="width: 18rem;">
+                                <img src="/images/img.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Массаж</h5>
+                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
+                                        Внимательно
+                                        подобранные
+                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
+                                        восстановить
+                                        энергию.
+                                    </p>
+                                    <button class="btn btn-warning">Редактировать</button>
+                                    <button class="btn btn-danger">Удалить</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <a href="#" style="text-decoration: none">
+                            <div class="card shadow border-0" style="width: 18rem;">
+                                <img src="/images/img.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Массаж</h5>
+                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
+                                        Внимательно
+                                        подобранные
+                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
+                                        восстановить
+                                        энергию.
+                                    </p>
+                                    <button class="btn btn-warning">Редактировать</button>
+                                    <button class="btn btn-danger">Удалить</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
                 </div>
             </main>
         </div>

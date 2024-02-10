@@ -12,6 +12,7 @@
     </script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 
     <link rel="stylesheet" href="/style/style.css">
     <link rel="stylesheet" href="/style/dashboard.css">
@@ -199,7 +200,7 @@
     <div class="container-fluid">
         <div class="row">
             <x-admin-header></x-admin-header>
-            <main id="showPage" class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-3">
+            <main id="showPage" class="col-md-9 col-lg-10 px-md-4 mt-3">
                 <h1 class="h2">Новые заявки</h1>
                 <div class="table-responsive small">
                     <table class="table table-striped table-sm">
@@ -365,13 +366,30 @@
                     </div>
                 </div>
                 <h1 class="h2 mt-3">Добавление сотрудника</h1>
-                form
+                <form action="">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Имя">
+                        <label for="floatingInput">Имя</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Фамилия">
+                        <label for="floatingInput">Фамилия</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="phone form-control" id="floatingInput" placeholder="Номер телефона">
+                        <label for="floatingInput">Номер телефона</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="emil" class="form-control" id="floatingInput" placeholder="Почта">
+                        <label for="floatingInput">Почта</label>
+                    </div>
+                    <button class="btn btn-success" type="submit">Добавить</button>
+                </form>
             </main>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js"
-        integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous">
+    <script>
+        $(".phone").mask("+7(999)999-99-99");
     </script>
 </body>
 
