@@ -44,3 +44,6 @@ Route::get('/admin/employees', function () {
     return view('admin.employees');
 });
 
+Route::get('/time', function () {
+    return view('time');
+});

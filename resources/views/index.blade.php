@@ -44,42 +44,12 @@
         </div>
     </div>
     <div class="container" style="margin-bottom: 50px">
-        <h1 class="text-center">SPA-процедуры</h1>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 mt-3">
+        <h1 class="text-center">Новые SPA-процедуры</h1>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-4 g-3 mt-3">
             <div class="col d-flex justify-content-center">
                 <a href="#" style="text-decoration: none">
                     <div class="card shadow border-0" style="width: 18rem;">
                         <img src="/images/img.png" class="card-img-top ind-card-img" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Массаж</h5>
-                            <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе. Внимательно
-                                подобранные
-                                техники массажа способны расслабить каждую мышцу, снять напряжение и восстановить
-                                энергию.
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col d-flex justify-content-center">
-                <a href="#" style="text-decoration: none">
-                    <div class="card shadow border-0" style="width: 18rem;">
-                        <img src="/images/img.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Массаж</h5>
-                            <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе. Внимательно
-                                подобранные
-                                техники массажа способны расслабить каждую мышцу, снять напряжение и восстановить
-                                энергию.
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col d-flex justify-content-center">
-                <a href="#" style="text-decoration: none">
-                    <div class="card shadow border-0" style="width: 18rem;">
-                        <img src="/images/img.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Массаж</h5>
                             <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе. Внимательно
