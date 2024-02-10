@@ -12,7 +12,7 @@
                     <a class="nav-link" aria-current="page" href="#">О нас</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Записаться на процедуру</a>
+                    <a class="nav-link" aria-current="page" href="/time">Записаться на процедуру</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="/procedures">Процедуры</a>
