@@ -1,0 +1,52 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Procedure;
+use App\Models\User;
+use Illuminate\Http\Request;
+
+class ProcedureController extends Controller
+{
+    public function addProcedure()
+    {
+        $user = User::where('id_role', 2)->get();
+        return view('admin.addProcedures', ['users' => $user]);
+    }
+
+    public function storeProcedure(Request $request)
+    {
+        $request->validate([
+            'procedure_title' => 'required',
+            'description' => 'required',
+            'photo' => 'required|image',
+            'employee' => 'required',
+            'cost' => 'required|numeric'
+        ], [
+            'procedure_title.required' => 'Поле обязательно для заполнения!',
+            'description.required' => 'Поле обязательно для заполнения!',
+            'photo.required' => 'Поле обязательно для заполнения!',
+            'employee.required' => 'Поле обязательно для заполнения!',
+            'cost.required' => 'Поле обязательно для заполнения!',
+            'photo.image' => 'Только изображения!',
+            'cost.numeric' => 'Введите числовое значение!',
+        ]);
+
+        $name_procedure = $request->file('photo')->hashName();
+        $path_procedure = $request->file('photo')->store('public/procedure');
+
+        $procedure = Procedure::create([
+            'title_procedure' => $request->procedure_title,
+            'description' => $request->description,
+            'photo_spa' => $name_procedure,
+            'id_user' => $request->employee,
+            'cost' => $request->cost,
+        ]);
+
+        if ($procedure) {
+            return redirect()->back()->with('success', 'Процедура успешно добавлена!');
+        } else {
+            return redirect()->back()->with('error', 'Ошибка добавления!');
+        }
+    }
+}

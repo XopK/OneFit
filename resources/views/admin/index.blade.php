@@ -287,8 +287,7 @@
                     </table>
                 </div>
                 <h1 class="h2">Последние добавленые процедуры</h1>
-                <div class="procedures row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 ">
-                <div class="procedures row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 mt-3">
+                <div class="procedures row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
                     <div class="col d-flex justify-content-center">
                         <a href="#" style="text-decoration: none">
                             <div class="card shadow border-0" style="width: 18rem;">

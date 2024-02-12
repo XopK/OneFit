@@ -200,203 +200,99 @@
         <div class="row">
             <x-admin-header></x-admin-header>
             <main id="showPage" class="col-md-9 col-lg-10 px-md-4">
-                <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Процедуры</h1>
-                    <a href="/admin/procedures/add" class="btn btn-success">+Добавить</a>
-                </div>
-                <div class="procedures row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 ">
-                    <div class="col d-flex justify-content-center">
-                        <a href="#" style="text-decoration: none">
-                            <div class="card shadow border-0" style="width: 18rem;">
-                                <img src="/images/img.png" class="card-img-top ind-card-img" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Массаж</h5>
-                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
-                                        Внимательно
-                                        подобранные
-                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
-                                        восстановить
-                                        энергию.
-                                    </p>
-                                    <button class="btn btn-warning">Редактировать</button>
-                                    <button class="btn btn-danger">Удалить</button>
+                <div class="container">
+                    <h1>Добавление процедуры</h1>
+                    <form action="/admin/procedures/add/store" enctype="multipart/form-data" method="POST">
+                        @csrf
+                        <div class="form-floating mb-3">
+                            <input type="text" name="procedure_title"
+                                class="form-control border-warning focus-ring focus-ring-warning" id="floatingInput"
+                                placeholder="Название процедуры">
+                            <label for="floatingInput">Название процедуры</label>
+                            @error('procedure_title')
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ $message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col d-flex justify-content-center">
-                        <a href="#" style="text-decoration: none">
-                            <div class="card shadow border-0" style="width: 18rem;">
-                                <img src="/images/img.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Массаж</h5>
-                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
-                                        Внимательно
-                                        подобранные
-                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
-                                        восстановить
-                                        энергию.
-                                    </p>
-                                    <button class="btn btn-warning">Редактировать</button>
-                                    <button class="btn btn-danger">Удалить</button>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Описание</label>
+                            <textarea name="description" class="form-control border-warning focus-ring focus-ring-warning"
+                                id="exampleFormControlTextarea1" rows="8"></textarea>
+                            @error('description')
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ $message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col d-flex justify-content-center">
-                        <a href="#" style="text-decoration: none">
-                            <div class="card shadow border-0" style="width: 18rem;">
-                                <img src="/images/img.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Массаж</h5>
-                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
-                                        Внимательно
-                                        подобранные
-                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
-                                        восстановить
-                                        энергию.
-                                    </p>
-                                    <button class="btn btn-warning">Редактировать</button>
-                                    <button class="btn btn-danger">Удалить</button>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <select name="employee"
+                                class="form-select form-select-lg border-warning focus-ring focus-ring-warning"
+                                aria-label="Default select example">
+                                <option disabled selected>Выберите сотрудника</option>
+                                @forelse ($users as $user)
+                                    <option value="{{ $user->id }}">{{ $user->name }} {{ $user->surname }}
+                                    </option>
+                                @empty
+                                    <option disabled selected>Пусто</option>
+                                @endforelse
+
+                            </select>
+                            @error('employee')
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ $message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col d-flex justify-content-center">
-                        <a href="#" style="text-decoration: none">
-                            <div class="card shadow border-0" style="width: 18rem;">
-                                <img src="/images/img.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Массаж</h5>
-                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
-                                        Внимательно
-                                        подобранные
-                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
-                                        восстановить
-                                        энергию.
-                                    </p>
-                                    <button class="btn btn-warning">Редактировать</button>
-                                    <button class="btn btn-danger">Удалить</button>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Выберите фото</label>
+                            <input name="photo" class="form-control border-warning focus-ring focus-ring-warning"
+                                type="file" id="formFile">
+                            @error('photo')
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ $message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col d-flex justify-content-center">
-                        <a href="#" style="text-decoration: none">
-                            <div class="card shadow border-0" style="width: 18rem;">
-                                <img src="/images/img.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Массаж</h5>
-                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
-                                        Внимательно
-                                        подобранные
-                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
-                                        восстановить
-                                        энергию.
-                                    </p>
-                                    <button class="btn btn-warning">Редактировать</button>
-                                    <button class="btn btn-danger">Удалить</button>
+                            @enderror
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input name="cost" type="number"
+                                class="form-control border-warning focus-ring focus-ring-warning" id="floatingInput"
+                                placeholder="Цена процедуры">
+                            <label for="floatingInput">Цена процедуры</label>
+                            @error('cost')
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ $message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
                                 </div>
+                            @enderror
+                        </div>
+                        <button type="submit" class="btn btn-warning">Добавить</button>
+                    </form>
+                    @if (session('success'))
+                        <div class="alert alert-success alert-dismissible mt-3">
+                            <div class="alert-text">
+                                {{ session('success') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                             </div>
-                        </a>
-                    </div>
-                    <div class="col d-flex justify-content-center">
-                        <a href="#" style="text-decoration: none">
-                            <div class="card shadow border-0" style="width: 18rem;">
-                                <img src="/images/img.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Массаж</h5>
-                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
-                                        Внимательно
-                                        подобранные
-                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
-                                        восстановить
-                                        энергию.
-                                    </p>
-                                    <button class="btn btn-warning">Редактировать</button>
-                                    <button class="btn btn-danger">Удалить</button>
-                                </div>
+                        </div>
+                    @endif
+                    @if (session('error'))
+                        <div class="alert alert-danger alert-dismissible mt-3">
+                            <div class="alert-text">
+                                {{ session('error') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                             </div>
-                        </a>
-                    </div>
-                    <div class="col d-flex justify-content-center">
-                        <a href="#" style="text-decoration: none">
-                            <div class="card shadow border-0" style="width: 18rem;">
-                                <img src="/images/img.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Массаж</h5>
-                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
-                                        Внимательно
-                                        подобранные
-                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
-                                        восстановить
-                                        энергию.
-                                    </p>
-                                    <button class="btn btn-warning">Редактировать</button>
-                                    <button class="btn btn-danger">Удалить</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col d-flex justify-content-center">
-                        <a href="#" style="text-decoration: none">
-                            <div class="card shadow border-0" style="width: 18rem;">
-                                <img src="/images/img.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Массаж</h5>
-                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
-                                        Внимательно
-                                        подобранные
-                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
-                                        восстановить
-                                        энергию.
-                                    </p>
-                                    <button class="btn btn-warning">Редактировать</button>
-                                    <button class="btn btn-danger">Удалить</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col d-flex justify-content-center">
-                        <a href="#" style="text-decoration: none">
-                            <div class="card shadow border-0" style="width: 18rem;">
-                                <img src="/images/img.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Массаж</h5>
-                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
-                                        Внимательно
-                                        подобранные
-                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
-                                        восстановить
-                                        энергию.
-                                    </p>
-                                    <button class="btn btn-warning">Редактировать</button>
-                                    <button class="btn btn-danger">Удалить</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col d-flex justify-content-center">
-                        <a href="#" style="text-decoration: none">
-                            <div class="card shadow border-0" style="width: 18rem;">
-                                <img src="/images/img.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Массаж</h5>
-                                    <p class="card-text">Эта процедура – настоящий подарок вашему телу и душе.
-                                        Внимательно
-                                        подобранные
-                                        техники массажа способны расслабить каждую мышцу, снять напряжение и
-                                        восстановить
-                                        энергию.
-                                    </p>
-                                    <button class="btn btn-warning">Редактировать</button>
-                                    <button class="btn btn-danger">Удалить</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    
+                        </div>
+                    @endif
                 </div>
             </main>
         </div>
