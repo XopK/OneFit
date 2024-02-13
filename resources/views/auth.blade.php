@@ -46,6 +46,14 @@
             </div>
             <button type="submit" class="btn btn-warning">Войти</button>
         </form>
+        @if (session('error'))
+            <div class="alert alert-danger alert-dismissible mt-3">
+                <div class="alert-text">
+                    {{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            </div>
+        @endif
     </div>
     <script>
         $(".phone").mask("+7(999)999-99-99");
