@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -64,6 +66,81 @@ class UserController extends Controller
             return redirect()->back()->with('success', 'Сотрудник создан!');
         } else {
             return redirect()->back()->with('error', 'Ошибка создания!');
+        }
+    }
+
+    public function signUp(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'surname' => 'required',
+            'phone' => 'required|regex:/\+7\([0-9][0-9][0-9]\)[0-9]{3}(\-)[0-9]{2}(\-)[0-9]{2}$/|unique:users',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:8',
+            'conf_password' => 'required|same:password',
+        ], [
+            'name.required' => 'Поле обязательно для заполнения!',
+            'surname.required' => 'Поле обязательно для заполнения!',
+            'phone.required' => 'Поле обязательно для заполнения!',
+            'email.required' => 'Поле обязательно для заполнения!',
+            'phone.regex' => 'Введите требуемый формат!',
+            'phone.unique' => 'Данный номер занят!',
+            'email.email' => 'Введите корректные данные!',
+            'email.unique' => 'Данная почта занята!',
+            'password.required' => 'Поле обязательно для заполенения!',
+            'conf_password.required' => 'Поле обязательно для заполенения!',
+            'password.min' => 'Минимум 8 символов!',
+            'conf_password.same' => 'Пароли не совпадают',
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'surname' => $request->surname,
+            'phone' => $request->phone,
+            'id_role' => 3,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        if ($user) {
+            Auth::login($user);
+            return redirect('/')->with('success', 'Успешаная регистраиця!');
+        } else {
+            return redirect()->back()->with('error', 'Ошибка регистрации!');
+        }
+    }
+
+    public function logout()
+    {
+        Session::flush();
+        Auth::logout();
+        return redirect("/");
+    }
+
+    public function signIn(Request $request)
+    {
+        $request->validate([
+            'phone' => 'required|regex:/\+7\([0-9][0-9][0-9]\)[0-9]{3}(\-)[0-9]{2}(\-)[0-9]{2}$/',
+            'password' => 'required',
+        ], [
+            'phone.required' => 'Поле обязательно для заполнения!',
+            'phone.regex' => 'Введите требуемый формат!',
+            'password.required' => 'Поле обязательно для заполнения!',
+        ]);
+
+        if (
+            Auth::attempt([
+                'phone' => $request->phone,
+                'password' => $request->password,
+            ])
+        ) {
+            if (Auth::user()->id_role == 1 || Auth::user()->id_role == 2) {
+                return redirect('/admin')->with('success', 'Успешная авторизаиця!');
+            } else {
+                return redirect('/')->with('success', 'Успешная авторизация!');
+            }
+        } else {
+            return redirect()->back()->with('error', 'Ошибка авторизации!');
         }
     }
 }

@@ -18,12 +18,22 @@
         </div>
         <div class="collapse zigmund navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/reg">Регистрация</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/auth">Авторизация</a>
-                </li>
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="/reg">Регистрация</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/auth">Авторизация</a>
+                    </li>
+                @endguest
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Личный кабинет</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Выйти</a>
+                    </li>
+                @endauth
             </ul>
         </div>
     </div>

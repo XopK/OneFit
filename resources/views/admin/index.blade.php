@@ -241,16 +241,6 @@
                             </a>
                         </div>
                     @empty
-                        <div class="col d-flex justify-content-center">
-                            <a href="#" style="text-decoration: none">
-                                <div class="card shadow border-0" style="width: 18rem;">
-                                    <img src="/images/img.png" class="card-img-top ind-card-img" alt="...">
-                                    <div class="card-body">
-                                        <h2>Пусто</h2>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
                     @endforelse
 
                 </div>

@@ -94,7 +94,6 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var buttons = document.querySelectorAll(".time-btn");
-            // Когда пользователь кликает на кнопку, заполняем поля даты и времени и открываем модальное окно
             buttons.forEach(function(button) {
                 button.addEventListener("click", function() {
                     var date = button.dataset.date;

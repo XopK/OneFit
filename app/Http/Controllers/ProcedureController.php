@@ -71,7 +71,7 @@ class ProcedureController extends Controller
             'id_procedure' => $request['id_procedure'],
             'id_user' => 1,
         ]);
-        return redirect('/');
+        return redirect()->back()->with('success', 'Молодец!');
     }
 
     public function procedures(){

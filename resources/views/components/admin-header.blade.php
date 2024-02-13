@@ -57,7 +57,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link-recolor d-flex align-items-center gap-2" href="#">
+                    <a class="nav-link link-recolor d-flex align-items-center gap-2" href="/logout">
                         <svg class="bi">
                             <use xlink:href="#door-closed" />
                         </svg>

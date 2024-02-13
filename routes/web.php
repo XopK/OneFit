@@ -32,6 +32,12 @@ Route::get('/reg', function () {
     return view('reg');
 });
 
+Route::post('/reg/create', [UserController::class, 'signUp']);
+
+Route::post('/auth/login', [UserController::class, 'signIn']);
+
+Route::get('/logout', [UserController::class, 'logout']);
+
 Route::get('/admin', [AdminController::class, 'index']);
 
 Route::get('/admin/applications', function () {
