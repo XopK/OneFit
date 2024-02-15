@@ -9,7 +9,7 @@
         <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto" >
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" aria-current="page"
+                    <a class="nav-link link-recolor d-flex align-items-center gap-2" aria-current="page"
                         href="/admin">
                         <svg class="bi">
                             <use xlink:href="#house-fill" />
@@ -18,7 +18,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="/admin/applications">
+                    <a class="nav-link link-recolor d-flex align-items-center gap-2" href="/admin/applications">
                         <svg class="bi">
                             <use xlink:href="#file-earmark" />
                         </svg>
@@ -26,7 +26,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="/admin/procedures">
+                    <a class="nav-link link-recolor d-flex align-items-center gap-2" href="/admin/procedures">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" class="bi bi-heart-pulse" viewBox="0 0 16 16">
                             <path
@@ -38,7 +38,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="/admin/employees">
+                    <a class="nav-link link-recolor d-flex align-items-center gap-2" href="/admin/employees">
                         <svg class="bi">
                             <use xlink:href="#people" />
                         </svg>
@@ -49,7 +49,7 @@
             <div class="mt-3"></div>
             <ul class="nav flex-column mb-auto">
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="#">
+                    <a class="nav-link link-recolor d-flex align-items-center gap-2" href="#">
                         <svg class="bi">
                             <use xlink:href="#gear-wide-connected" />
                         </svg>
@@ -57,7 +57,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="#">
+                    <a class="nav-link link-recolor d-flex align-items-center gap-2" href="#">
                         <svg class="bi">
                             <use xlink:href="#door-closed" />
                         </svg>

@@ -22,7 +22,10 @@ body {
     flex-direction: column;
 }
 .nav-link{
-    color:rgb(255, 255, 255);
+    color:rgb(49, 26, 5);
+}
+.link-recolor{
+    color: white;
 }
 footer{
     width: 100%;
