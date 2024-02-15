@@ -1,5 +1,5 @@
-<div style="width: 220px" class="sidebar border border-right col-md-3 col-lg-2 p-0 border-0">
-    <div class="offcanvas-md offcanvas-end" tabindex="-1" id="sidebarMenu"
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebarMenu"
         aria-labelledby="sidebarMenuLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="sidebarMenuLabel">OneFit</h5>
@@ -67,4 +67,4 @@
             </ul>
         </div>
     </div>
-</div>
+

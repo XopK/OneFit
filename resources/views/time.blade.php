@@ -31,6 +31,20 @@
                         <td>{{$da}}</td>
                     @endfor
                   </tr>
+                  @php
+                    $ti = strtotime('10:00');
+                  @endphp
+                  @for ($i = 0; $i < 12; $i++)
+                  @php
+                    $hour = date('H:i', $ti);
+                    $ti = strtotime('+1 hour', $ti);
+                  @endphp
+                  <tr>
+                    @for ($b = 0; $b < 10; $b++)
+                        <td>{{$hour}}</td>
+                    @endfor
+                  </tr>
+                  @endfor
                 </tbody>
               </table>
         </div>
@@ -38,3 +52,5 @@
     </div>
 </body>
 </html>
+
+
