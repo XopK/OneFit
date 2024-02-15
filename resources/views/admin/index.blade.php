@@ -119,10 +119,24 @@
         </ul>
         <x-admin-header></x-admin-header>
     </header>
-
     <div class="container-fluid">
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible mt-3">
+                <div class="alert-text">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            </div>
+        @endif
+        @if (session('error'))
+            <div class="alert alert-danger alert-dismissible mt-3">
+                <div class="alert-text">
+                    {{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            </div>
+        @endif
         <div class="row">
-
             <main id="showPage" class="px-md-4 mt-3">
                 <h1 class="h2">Новые заявки</h1>
                 <div class="table-responsive small">
@@ -323,22 +337,55 @@
                     </div>
                 </div>
                 <h1 class="h2 mt-3">Добавление сотрудника</h1>
-                <form action="">
+                <form action="/admin/addEmployee" method="POST">
+                    @csrf
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Имя">
+                        <input type="text" class="form-control" name="name" id="floatingInput"
+                            placeholder="Имя">
                         <label for="floatingInput">Имя</label>
+                        @error('name')
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Фамилия">
+                        <input type="text" class="form-control" name="surname" id="floatingInput"
+                            placeholder="Фамилия">
                         <label for="floatingInput">Фамилия</label>
+                        @error('surname')
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="phone form-control" id="floatingInput" placeholder="Номер телефона">
+                        <input type="text" name="phone" class="phone form-control" id="floatingInput"
+                            placeholder="Номер телефона">
                         <label for="floatingInput">Номер телефона</label>
+                        @error('phone')
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="emil" class="form-control" id="floatingInput" placeholder="Почта">
+                        <input type="email" name="email" class="form-control" id="floatingInput"
+                            placeholder="Почта">
                         <label for="floatingInput">Почта</label>
+                        @error('email')
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        @enderror
                     </div>
                     <button class="btn btn-success" type="submit">Добавить</button>
                 </form>
