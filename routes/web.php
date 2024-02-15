@@ -20,9 +20,9 @@ Route::get('/', [ProcedureController::class, 'index']);
 
 Route::get('/infoProcedure/{id}', [ProcedureController::class, 'infoProcedure']);
 
-Route::get('/procedures', function () {
-    return view('procedures');
-});
+Route::get('/procedures', [ProcedureController::class, 'procedures']);
+
+Route::post('/application/create', [ProcedureController::class, 'ApplicationCreate']);
 
 Route::get('/auth', function () {
     return view('auth');
@@ -38,15 +38,11 @@ Route::get('/admin/applications', function () {
     return view('admin.applications');
 });
 
-Route::get('/admin/procedures', function () {
-    return view('admin.procedures');
-});
+Route::get('/admin/procedures', [AdminController::class, 'adminprocedures']);
 
 Route::get('/admin/employees', [AdminController::class, 'employees']);
 
-Route::get('/time', function () {
-    return view('time');
-});
+Route::get('/time/{id}', [ProcedureController::class, 'timeChoise']);
 
 Route::get('/admin/procedures/add', [ProcedureController::class, 'addProcedure']);
 

@@ -6,21 +6,16 @@
                 <button type="button" class="btn-close focus-ring focus-ring-warning border-0" data-bs-dismiss="modal"
                     aria-label="Close"></button>
             </div>
-            <form action="">
+            <form action="/application/create">
                 <div class="modal-body border-0">
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control focus-ring focus-ring-warning border-0"
-                            id="floatingInput" placeholder="Ваше имя">
-                        <label for="floatingInput">Ваше имя</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" name="phone" class="phone form-control focus-ring focus-ring-warning border-0"
-                            id="floatingInput" placeholder="Номер телефона">
-                        <label for="floatingInput">Номер телефона</label>
-                    </div>
+                        <input type="hidden" name="id_procedure" value="">
+                        <input type="hidden" name="date" id="modalInputDate">
+                        <input type="hidden" name="time" id="modalInputTime">
+                        <p id="modalDate"></p>
+                        <p id="modalTime"></p>
                 </div>
                 <div class="modal-footer justify-content-center border-0">
-                    <button type="button" class="btn btn-warning btn-lg">Отправить</button>
+                    <button type="button" class="btn btn-warning btn-lg">Забронировать</button>
                 </div>
             </form>
         </div>

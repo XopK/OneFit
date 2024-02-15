@@ -22,13 +22,21 @@
     <x-header></x-header>
     <div class="main-block">
     <div class="container">
-        <div class="row">
-            <div class="col-6">
-                <img src="/storage/procedure/{{$data->photo_spa}}" alt="{{$data->photo_spa}}">
+        <div class="row mt-5 mb-3">
+            <div class="col-12 col-md-6">
+                <img class="procedure-img" src="/storage/procedure/{{$data->photo_spa}}" alt="{{$data->photo_spa}}">
             </div>
-            <div class="col-6">
-                <p>{{$data->title_procedure}}</p>
-                <p>{{$data->description}}</p>
+            <div class="col-12 col-md-6">
+                <p class="procedure-title">{{$data->title_procedure}}</p>
+                <p class="procedure-desc">{{$data->description}}</p>
+                <div class="d-flex justify-content-center mb-5">
+                    @auth
+                    <a class="btn btn-warning" href="/time/{{$data->id}}">Записаться</a>
+                    @endauth
+                    @guest
+                    <a class="btn btn-warning" href="/auth">Войдите для записи</a>
+                    @endguest
+                </div>
             </div>
         </div>
     </div>

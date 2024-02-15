@@ -46,6 +46,10 @@ footer img{
 }
 .card{
     width: 100% !important;
+    height: 472px;
+}
+.adm-card{
+    height: 550px;
 }
 .zigmund{
     flex-grow: 0 !important;
@@ -68,7 +72,7 @@ footer img{
     .bd-placeholder-img-lg {
         font-size: 3.5rem;
     }
-}
+}ind
 
 .b-example-divider {
     width: 100%;
@@ -131,4 +135,32 @@ footer img{
 
 .bd-mode-toggle .dropdown-menu .active .bi {
     display: block !important;
+}
+
+.procedure-img{
+    width: 100%;
+}
+.procedure-title{
+    font-size: 30px;
+}
+.procedure-desc{
+    font-size: 20px;
+}
+.time-btn{
+    border: none;
+    outline: none;
+    background: none;
+}
+.card-text{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+            line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.ind-card-img{
+    width: 100%;
+    height: 312px;
+    object-fit: cover;
 }

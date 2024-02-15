@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Application;
 use App\Models\Procedure;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -57,5 +58,24 @@ class ProcedureController extends Controller
 
     public function infoProcedure(Procedure $id){
         return view('procedure', ['data' => $id]);
+    }
+
+    public function timeChoise(Procedure $id){
+        return view('time', ['data' => $id]);
+    }
+
+    public function ApplicationCreate(Request $request){
+        Application::create([
+            'date' => $request['date'],
+            'time'=> $request['time'],
+            'id_procedure' => $request['id_procedure'],
+            'id_user' => 1,
+        ]);
+        return redirect('/');
+    }
+
+    public function procedures(){
+        $procedure = Procedure::all();
+        return view('procedures', ['procedures' => $procedure]);
     }
 }

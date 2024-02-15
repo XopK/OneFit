@@ -226,9 +226,9 @@
                 <h1 class="h2">Последние добавленые процедуры</h1>
                 <div class="procedures row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
                     @forelse ($procedures as $procedure)
-                        <div class="col d-flex justify-content-center">
+                        <div class="col">
                             <a href="#" style="text-decoration: none">
-                                <div class="card shadow border-0" style="width: 18rem;">
+                                <div class="card adm-card shadow border-0" style="width: 18rem;">
                                     <img src="/storage/procedure/{{ $procedure->photo_spa }}"
                                         class="card-img-top ind-card-img" alt="{{ $procedure->photo_spa }}">
                                     <div class="card-body">

@@ -19,4 +19,9 @@ class AdminController extends Controller
         $user = User::where('id_role', 2)->with('procedure')->get();
         return view('admin.employees', ['employees' => $user]);
     }
+
+    public function adminprocedures(){
+        $procedures = Procedure::orderBy('created_at', 'desc')->get();
+        return view('admin.procedures', ['procedures' => $procedures]);
+    }
 }

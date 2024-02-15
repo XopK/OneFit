@@ -47,7 +47,7 @@
         <h1 class="text-center">Новые SPA-процедуры</h1>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-4 g-3 mt-3">
             @foreach ($procedures as $procedure)
-            <div class="col d-flex justify-content-center">
+            <div class="col">
                 <a href="/infoProcedure/{{$procedure->id}}" style="text-decoration: none">
                     <div class="card shadow border-0" style="width: 18rem;">
                         <img src="/storage/procedure/{{$procedure->photo_spa}}" class="card-img-top ind-card-img" alt="{{$procedure->photo_spa}}">
@@ -72,10 +72,8 @@
                 <a href="/reg" class="btn btn-warning btn-lg">Зарегистрироваться</a>
                 @endguest
                 @auth
-                <a href="" class="btn btn-warning btn-lg">Записаться</a>
+                <a href="/procedures" class="btn btn-warning btn-lg">Записаться</a>
                 @endauth
-                {{-- <button class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#application"
-                    type="button">Подать заявку</button> --}}
             </div>
         </div>
     </div>

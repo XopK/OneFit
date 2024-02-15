@@ -21,35 +21,96 @@
     <div class="wrapper">
         <x-header></x-header>
         <div class="container main-block">
+            @php
+            $times = [];
+            $dates = [];
+            for ($i = 0; $i < 10; $i++) {
+                $dates[] = date("j F l", strtotime("+$i day"));
+            }
+            $ti = strtotime('10:00');
+            for ($i = 0; $i < 12; $i++) {
+                $time = date('H:i', $ti);
+                $times[] = $time;
+                $ti = strtotime('+1 hour', $ti);
+            }
+            @endphp
+            <div class="table-responsive">
             <table class="table">
                 <tbody>
-                  <tr>
-                    @for ($i = 0; $i < 10; $i++)
-                    @php
-                    $da = date("j F l", strtotime("+$i day"))
-                    @endphp
-                        <td>{{$da}}</td>
-                    @endfor
-                  </tr>
-                  @php
-                    $ti = strtotime('10:00');
-                  @endphp
-                  @for ($i = 0; $i < 12; $i++)
-                  @php
-                    $hour = date('H:i', $ti);
-                    $ti = strtotime('+1 hour', $ti);
-                  @endphp
-                  <tr>
-                    @for ($b = 0; $b < 10; $b++)
-                        <td>{{$hour}}</td>
-                    @endfor
-                  </tr>
-                  @endfor
+                    <tr>
+                        @foreach ($dates as $date)
+                            <td class="table-primary">{{$date}}</td>
+                        @endforeach
+                    </tr>
+                    @foreach ($times as $time)
+                        <tr>
+                            @foreach ($dates as $date)
+                            @php
+                                $application = App\Models\Application::where('date', $date)->where('time', $time)->where('id_procedure', $data->id)->first();
+                                $isBooked = $application ? $application->isBooked() : false;
+                            @endphp
+                                @if ($isBooked)
+                                <td class="table-danger">
+                                    <button class="time-btn">{{$time}}</button>
+                                </td>
+                                @else
+                                <td class="table-success">
+                                    <button class="time-btn" data-date="{{$date}}" data-time="{{$time}}" data-bs-toggle="modal" data-bs-target="#application" type="button">{{$time}}</button>
+                                </td>
+                                @endif
+                            @endforeach
+                        </tr>
+                    @endforeach
                 </tbody>
-              </table>
+            </table>
+            </div>
         </div>
         <x-footer></x-footer>
+        <div class="modal fade" id="application" tabindex="-1" aria-labelledby="application" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content border-0" style="background-color: rgb(241,235,222); color:rgb(49, 26, 5);">
+                    <div class="modal-header border-0">
+                        <h1>Бронирование</h1>
+                        <button type="button" class="btn-close focus-ring focus-ring-warning border-0" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <form action="/application/create" method="POST">
+                        @csrf
+                        <div class="modal-body border-0">
+                                <input type="hidden" name="id_procedure" value="{{$data->id}}">
+                                <input type="hidden" name="date" id="modalInputDate">
+                                <input type="hidden" name="time" id="modalInputTime">
+                                <p id="modalDate"></p>
+                                <p id="modalTime"></p>
+                        </div>
+                        <div class="modal-footer justify-content-center border-0">
+                            <button type="submit" class="btn btn-warning btn-lg">Забронировать</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var buttons = document.querySelectorAll(".time-btn");
+            // Когда пользователь кликает на кнопку, заполняем поля даты и времени и открываем модальное окно
+            buttons.forEach(function(button) {
+                button.addEventListener("click", function() {
+                    var date = button.dataset.date;
+                    var time = button.dataset.time;
+                    var dateString = "Дата: " + date;
+                    var timeString = "Время: " + time;
+                    document.getElementById("modalDate").innerHTML = dateString;
+                    document.getElementById("modalTime").innerHTML = timeString;
+                    document.getElementById("modalInputDate").value = date;
+                    document.getElementById("modalInputTime").value = time;
+                    var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+                    myModal.show();
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 
