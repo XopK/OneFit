@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProcedureController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -30,9 +31,8 @@ Route::get('/auth', function () {
 Route::get('/reg', function () {
     return view('reg');
 });
-Route::get('/admin', function () {
-    return view('admin.index');
-});
+
+Route::get('/admin', [AdminController::class, 'index']);
 
 Route::get('/admin/applications', function () {
     return view('admin.applications');
@@ -42,9 +42,7 @@ Route::get('/admin/procedures', function () {
     return view('admin.procedures');
 });
 
-Route::get('/admin/employees', function () {
-    return view('admin.employees');
-});
+Route::get('/admin/employees', [AdminController::class, 'employees']);
 
 Route::get('/time', function () {
     return view('time');

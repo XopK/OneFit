@@ -18,4 +18,9 @@ class Procedure extends Model
     ];
 
     protected $table = 'spa_procedures';
+
+    public function users()
+    {
+        return $this->hasOne(User::class, 'id_user');
+    }
 }
