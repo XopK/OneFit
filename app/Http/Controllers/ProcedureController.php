@@ -49,4 +49,13 @@ class ProcedureController extends Controller
             return redirect()->back()->with('error', 'Ошибка добавления!');
         }
     }
+
+    public function index(){
+        $procedure = Procedure::limit(4)->get();
+        return view('index', ['procedures' => $procedure]);
+    }
+
+    public function infoProcedure(Procedure $id){
+        return view('procedure', ['data' => $id]);
+    }
 }

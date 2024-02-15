@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [ProcedureController::class, 'index']);
+
+Route::get('/infoProcedure/{id}', [ProcedureController::class, 'infoProcedure']);
 
 Route::get('/procedures', function () {
     return view('procedures');
