@@ -69,6 +69,7 @@ class ProcedureController extends Controller
         Application::create([
             'date' => $request['date'],
             'time'=> $request['time'],
+            'id_status' => 1,
             'id_procedure' => $request['id_procedure'],
             'id_user' => Auth::user()->id,
         ]);

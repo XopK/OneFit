@@ -12,6 +12,7 @@ class Application extends Model
     protected $fillable = [
         'date',
         'time',
+        'id_status',
         'id_procedure',
         'id_user',
     ];
@@ -23,6 +24,10 @@ class Application extends Model
 
     public function isBooked()
     {
-        return !is_null($this->id_user);
+        if ($this->id_status == 1 || $this->id_status == 2) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

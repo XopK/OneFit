@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('time');
             $table->foreignId('id_procedure')->references('id')->on('spa_procedures');
             $table->foreignId('id_user')->nullable()->references('id')->on('users');
+            $table->foreignId('id_status')->references('id')->on('statuses');
             $table->timestamps();
         });
     }
