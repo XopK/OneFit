@@ -24,8 +24,17 @@
             @php
             $times = [];
             $dates = [];
+            $monthNames = [
+                'января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
+                'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
+            ];
+            $dayNames = [
+                'Воскресенье', 'Понедельник', 'Вторник', 'Среда',
+                'Четверг', 'Пятница', 'Суббота'
+            ];
             for ($i = 0; $i < 10; $i++) {
-                $dates[] = date("j F l", strtotime("+$i day"));
+                $date = date("j ", strtotime("+$i day")) . $monthNames[date("n", strtotime("+$i day")) - 1] . ' ' . $dayNames[date("w", strtotime("+$i day"))];
+                $dates[] = $date;
             }
             $ti = strtotime('10:00');
             for ($i = 0; $i < 12; $i++) {
@@ -80,8 +89,10 @@
                                 <input type="hidden" name="id_procedure" value="{{$data->id}}">
                                 <input type="hidden" name="date" id="modalInputDate">
                                 <input type="hidden" name="time" id="modalInputTime">
+                                <p>{{$data->title_procedure}}</p>
                                 <p id="modalDate"></p>
                                 <p id="modalTime"></p>
+                                <p>Цена: {{$data->cost}} руб.</p>
                         </div>
                         <div class="modal-footer justify-content-center border-0">
                             <button type="submit" class="btn btn-warning btn-lg">Забронировать</button>
