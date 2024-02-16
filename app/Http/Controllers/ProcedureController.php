@@ -6,6 +6,7 @@ use App\Models\Application;
 use App\Models\Procedure;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProcedureController extends Controller
 {
@@ -69,7 +70,7 @@ class ProcedureController extends Controller
             'date' => $request['date'],
             'time'=> $request['time'],
             'id_procedure' => $request['id_procedure'],
-            'id_user' => 1,
+            'id_user' => Auth::user()->id,
         ]);
         return redirect()->back()->with('success', 'Молодец!');
     }
