@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Application;
+use App\Models\Procedure;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -57,7 +59,7 @@ class UserController extends Controller
             $to = $request->email;
             $subejct = "Добро пожаловать в команду!";
             $txt = "
-            Вы стали сотрудником 'OneFit'! 
+            Вы стали сотрудником 'OneFit'!
             Данные для входа
             Номер телефона: $request->phone;
             Пароль: $password;
@@ -142,5 +144,36 @@ class UserController extends Controller
         } else {
             return redirect()->back()->with('error', 'Ошибка авторизации!');
         }
+    }
+    public function editUser(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'surname' => 'required',
+            'phone' => 'required|regex:/\+7\([0-9][0-9][0-9]\)[0-9]{3}(\-)[0-9]{2}(\-)[0-9]{2}$/|unique:users,phone,' . Auth::user()->id,
+            'password' => 'nullable|min:8',
+        ], [
+            'name.required' => 'Поле обязательно для заполнения!',
+            'surname.required' => 'Поле обязательно для заполнения!',
+            'phone.required' => 'Поле обязательно для заполнения!',
+            'email.required' => 'Поле обязательно для заполнения!',
+            'phone.regex' => 'Введите требуемый формат!',
+            'phone.unique' => 'Данный номер занят!',
+            'password.min' => 'Минимум 8 символов!',
+        ]);
+        $updateInfo = User::find(Auth::user()->id);
+        if (!empty($request['password'])) {
+            $updateInfo->password = Hash::make($request['password']);
+        }
+        $updateInfo->name = $request['name'];
+        $updateInfo->surname = $request['surname'];
+        $updateInfo->phone = $request['phone'];
+        $updateInfo->save();
+
+        return redirect()->back()->with('success', 'Данные обновлены');
+    }
+
+    public function profile(){
+        $data = Application::where('id_user', Auth::user()->id)->get();
+        return view('profile', ['data' => $data]);
     }
 }

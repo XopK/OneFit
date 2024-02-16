@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ProcedureController;
 use App\Http\Controllers\UserController;
 use App\Models\Procedure;
@@ -59,3 +60,11 @@ Route::post('/admin/addEmployee', [UserController::class, 'addEmployee']);
 Route::get('/admin/employees/delete/{id}', [AdminController::class, 'deleteUser']);
 
 Route::get('/admin/procedures/edit/{id}', [ProcedureController::class, 'edit']);
+
+Route::get('/profile', [UserController::class, 'profile']);
+
+Route::post('/user/update', [UserController::class, 'editUser']);
+
+Route::get('/employee', [EmployeeController::class, 'list']);
+
+Route::get('/employee/{id}/applications', [EmployeeController::class, 'listApp']);

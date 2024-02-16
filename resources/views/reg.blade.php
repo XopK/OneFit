@@ -20,12 +20,15 @@
 <body>
     <x-header></x-header>
     <div class="container">
+        <div class="d-flex justify-content-center mb-3">
+            <h2>Регистрация</h2>
+        </div>
         <form action="/reg/create" method="POST">
             @csrf
-            <div class="mb-3">
-                <label for="InputName" class="form-label">Имя</label>
+            <div class="form-floating mb-3">
                 <input type="text" class="form-control focus-ring focus-ring-warning border-warning" id="InputName"
-                    name="name">
+                    name="name" placeholder="">
+                <label for="InputName">Имя</label>
                 @error('name')
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         {{ $message }}
@@ -33,10 +36,10 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3">
-                <label for="InputSurname" class="form-label">Фамилия</label>
+            <div class="form-floating mb-3">
                 <input type="text" class="form-control focus-ring focus-ring-warning border-warning"
-                    id="InputSurname" name="surname">
+                    id="InputSurname" name="surname" placeholder="">
+                <label for="InputSurname" class="form-label">Фамилия</label>
                 @error('surname')
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         {{ $message }}
@@ -44,10 +47,10 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3">
-                <label for="InputPhone" class="form-label">Номер телефона</label>
+            <div class="form-floating mb-3">
                 <input type="text" class="form-control focus-ring focus-ring-warning border-warning phone"
-                    id="InputPhone" name="phone">
+                    id="InputPhone" name="phone" placeholder="">
+                <label for="InputPhone" class="form-label">Номер телефона</label>
                 @error('phone')
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         {{ $message }}
@@ -55,10 +58,10 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3">
-                <label for="InputEmail" class="form-label">Почта</label>
+            <div class="form-floating mb-3">
                 <input type="email" class="form-control focus-ring focus-ring-warning border-warning" id="InputEmail"
-                    name="email">
+                    name="email" placeholder="">
+                <label for="InputEmail" class="form-label">Почта</label>
                 @error('email')
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         {{ $message }}
@@ -66,10 +69,10 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3">
-                <label for="InputPassword" class="form-label">Пароль</label>
+            <div class="form-floating mb-3">
                 <input type="password" class="form-control focus-ring focus-ring-warning border-warning"
-                    id="InputPassword" name="password">
+                    id="InputPassword" name="password" placeholder="">
+                <label for="InputPassword" class="form-label">Пароль</label>
                 @error('password')
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         {{ $message }}
@@ -77,10 +80,10 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3">
-                <label for="ConfPassword" class="form-label">Подтверждение пароля</label>
+            <div class="form-floating mb-3">
                 <input type="password" class="form-control focus-ring focus-ring-warning border-warning"
-                    id="ConfPassword" name="conf_password">
+                    id="ConfPassword" name="conf_password" placeholder="">
+                <label for="ConfPassword" class="form-label">Подтверждение пароля</label>
                 @error('conf_password')
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         {{ $message }}
@@ -88,7 +91,9 @@
                     </div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-warning">Зарегистрироваться</button>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-warning">Зарегистрироваться</button>
+            </div>
         </form>
     </div>
     <script>

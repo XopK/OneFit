@@ -20,12 +20,16 @@
 <body>
     <x-header></x-header>
     <div class="container">
+        <div class="d-flex justify-content-center mb-3">
+            <h2>Авторизация</h2>
+        </div>
         <form action="/auth/login" method="POST">
             @csrf
-            <div class="mb-3">
-                <label for="InputEmail" class="form-label">Номер телефона</label>
+            <div class="form-floating mb-3">
                 <input type="text" name="phone"
-                    class="phone form-control focus-ring focus-ring-warning border-warning" id="InputEmail">
+                    class="phone form-control focus-ring focus-ring-warning border-warning" id="InputEmail"
+                    placeholder="">
+                <label for="InputEmail" class="form-label">Номер телефона</label>
                 @error('phone')
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         {{ $message }}
@@ -33,10 +37,10 @@
                     </div>
                 @enderror
             </div>
-            <div class="mb-3">
-                <label for="InputPassword" class="form-label">Пароль</label>
+            <div class="form-floating mb-3">
                 <input type="password" name="password" class="form-control focus-ring focus-ring-warning border-warning"
-                    id="InputPassword">
+                    id="InputPassword" placeholder="">
+                <label for="InputPassword" class="form-label">Пароль</label>
                 @error('phone')
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         {{ $message }}
@@ -44,7 +48,9 @@
                     </div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-warning">Войти</button>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-warning">Войти</button>
+            </div>
         </form>
         @if (session('error'))
             <div class="alert alert-danger alert-dismissible mt-3">

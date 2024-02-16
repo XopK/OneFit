@@ -49,14 +49,6 @@
             <div class="mt-3"></div>
             <ul class="nav flex-column mb-auto">
                 <li class="nav-item">
-                    <a class="nav-link link-recolor d-flex align-items-center gap-2" href="#">
-                        <svg class="bi">
-                            <use xlink:href="#gear-wide-connected" />
-                        </svg>
-                        Настройки
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link link-recolor d-flex align-items-center gap-2" href="/logout">
                         <svg class="bi">
                             <use xlink:href="#door-closed" />

@@ -27,9 +27,15 @@
                     </li>
                 @endguest
                 @auth
+                    @if (Auth::user()->id_role == 2)
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Личный кабинет</a>
+                        <a class="nav-link" href="/employee">Мои записи</a>
                     </li>
+                    @elseif (Auth::user()->id_role == 3)
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile">Личный кабинет</a>
+                    </li>
+                    @endif
                     <li class="nav-item">
                         <a class="nav-link" href="/logout">Выйти</a>
                     </li>
