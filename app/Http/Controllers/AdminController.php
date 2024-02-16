@@ -22,15 +22,55 @@ class AdminController extends Controller
         return view('admin.index', ['procedures' => $procedures, 'applications' => $application]);
     }
 
-    public function employees()
+    public function employees(Request $request)
     {
-        $user = User::where('id_role', 2)->with('procedure')->get();
-        return view('admin.employees', ['employees' => $user]);
+        $sort = $request->input('sort', null);
+
+        $usersQuery = User::where('id_role', 2)->with('procedure');
+
+        if ($sort !== null) {
+            $usersQuery->orderBy('name', $sort);
+        }
+
+        $users = $usersQuery->get();
+        return view('admin.employees', ['employees' => $users]);
+    }
+
+    public function application(Request $request)
+    {
+        $status = $request->input('status', null);
+
+        if ($status !== null) {
+            $applications = $this->filterApplication($status);
+        } else {
+            $applications = Application::orderBy('created_at', 'desc')->get();
+            $formattedApplications = $applications->map(function ($application) {
+                $application->formatted_datetime = Carbon::parse($application->created_at)->isoFormat('D MMMM dddd HH:mm');
+                return $application;
+            });
+        }
+        return view('admin.applications', ['applications' => $applications]);
+    }
+
+    protected function filterApplication($status)
+    {
+        $application = Application::where('id_status', $status)->orderBy('created_at', 'desc')->get();
+        $formattedApplications = $application->map(function ($application) {
+            $application->formatted_datetime = Carbon::parse($application->created_at)->isoFormat('D MMMM dddd HH:mm');
+            return $application;
+        });
+        return $formattedApplications;
     }
 
     public function adminprocedures()
     {
         $procedures = Procedure::orderBy('created_at', 'desc')->get();
         return view('admin.procedures', ['procedures' => $procedures]);
+    }
+
+    public function deleteUser(User $id)
+    {
+        $id->delete();
+        return redirect()->back()->with('success', 'Сотрудник удален!');
     }
 }

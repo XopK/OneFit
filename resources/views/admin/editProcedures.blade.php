@@ -120,55 +120,106 @@
     </header>
 
     <div class="container-fluid">
-        <main id="showPage" class="px-md-4">
-            <div
-                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Заявки</h1>
-                <div class="dropdown">
-                    <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Статусы
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/admin/applications?status=1">Ожидание</a></li>
-                        <li><a class="dropdown-item" href="/admin/applications?status=2">Принято</a></li>
-                        <li><a class="dropdown-item" href="/admin/applications?status=3">Отклонено</a></li>
-                        <li><a class="dropdown-item" href="/admin/applications?status=4">В архиве</a></li>
-                    </ul>
+            <main id="showPage" class="px-md-4">
+                <div class="container">
+                    <h1>Редактирование процедуры</h1>
+                    <form action="/admin/procedures/add/store" enctype="multipart/form-data" method="POST">
+                        @csrf
+                        <div class="form-floating mb-3">
+                            <input type="text" value="{{$data->title_procedure}}" name="procedure_title"
+                                class="form-control border-warning focus-ring focus-ring-warning" id="floatingInput"
+                                placeholder="Название процедуры">
+                            <label for="floatingInput">Название процедуры</label>
+                            @error('procedure_title')
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ $message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Описание</label>
+                            <textarea name="description" class="form-control border-warning focus-ring focus-ring-warning"
+                                id="exampleFormControlTextarea1" rows="8">{{$data->description}}</textarea>
+                            @error('description')
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ $message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <select name="employee"
+                                class="form-select form-select-lg border-warning focus-ring focus-ring-warning"
+                                aria-label="Default select example">
+                                @if ($currentUser !== null)
+                                <option disabled selected>{{$currentUser->name}} {{$currentUser->surname}}</option>
+                                @else
+                                <option disabled selected>Выберите сотрудника</option>
+                                @endif
+                                @forelse ($users as $user)
+                                    <option value="{{ $user->id }}">{{ $user->name }} {{ $user->surname }}
+                                    </option>
+                                @empty
+                                    <option disabled selected>Пусто</option>
+                                @endforelse
+
+                            </select>
+                            @error('employee')
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ $message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Выберите фото</label>
+                            <input name="photo" class="form-control border-warning focus-ring focus-ring-warning"
+                                type="file" id="formFile">
+                            @error('photo')
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ $message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input name="cost" value="{{$data->cost}}" type="number"
+                                class="form-control border-warning focus-ring focus-ring-warning" id="floatingInput"
+                                placeholder="Цена процедуры">
+                            <label for="floatingInput">Цена процедуры</label>
+                            @error('cost')
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ $message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
+                            @enderror
+                        </div>
+                        <button type="submit" class="btn btn-warning">Добавить</button>
+                    </form>
+                    @if (session('success'))
+                        <div class="alert alert-success alert-dismissible mt-3">
+                            <div class="alert-text">
+                                {{ session('success') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                    @endif
+                    @if (session('error'))
+                        <div class="alert alert-danger alert-dismissible mt-3">
+                            <div class="alert-text">
+                                {{ session('error') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                    @endif
                 </div>
-            </div>
-
-            <div class="table-responsive small">
-                <table class="table table-striped table-sm">
-                    <thead>
-                        <tr>
-                            <th scope="col">№</th>
-                            <th scope="col">Имя пользователя</th>
-                            <th scope="col">Номер телефона</th>
-                            <th scope="col">Дата бронирования</th>
-                            <th scope="col">Процедура</th>
-                            <th scope="col">Статус</th>
-                            <th scope="col">Дата подачи</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse ($applications as $application)
-                            <tr>
-                                <td>{{ $application->id }}</td>
-                                <td>{{ $application->user->name }} {{ $application->user->surname }}</td>
-                                <td>{{ $application->user->phone }}</td>
-                                <td>{{ $application->date }} {{ $application->time }}</td>
-                                <td>{{ $application->procedure->title_procedure }}</td>
-                                <td>{{ $application->status->title_status }}</td>
-                                <td>{{ $application->formatted_datetime }}</td>
-                            </tr>
-                        @empty
-                        @endforelse
-
-                    </tbody>
-                </table>
-            </div>
-        </main>
+            </main>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js"

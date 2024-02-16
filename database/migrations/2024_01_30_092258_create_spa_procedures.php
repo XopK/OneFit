@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title_procedure');
             $table->longText('description');
             $table->string('photo_spa');
-            $table->foreignId('id_user')->references('id')->on('users');
+            $table->foreignId('id_user')->nullable()->references('id')->on('users')->onDelete('set null');;
             $table->string('cost');
             $table->timestamps();
         });

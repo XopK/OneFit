@@ -120,6 +120,14 @@
     </header>
 
     <div class="container-fluid">
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible mt-3">
+                <div class="alert-text">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            </div>
+        @endif
         <main id="showPage" class="px-md-4">
             <div
                 class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -130,9 +138,9 @@
                         Сортировать по
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">дате добавления</a></li>
-                        <li><a class="dropdown-item" href="#">алфавиту (убыванию)</a></li>
-                        <li><a class="dropdown-item" href="#">алфавиту (возрастанию)</a></li>
+                        <li><a class="dropdown-item" href="/admin/employees">дате добавления</a></li>
+                        <li><a class="dropdown-item" href="/admin/employees?sort=desc">алфавиту (убыванию)</a></li>
+                        <li><a class="dropdown-item" href="/admin/employees?sort=asc">алфавиту (возрастанию)</a></li>
                     </ul>
                 </div>
             </div>
@@ -172,10 +180,10 @@
                                 @endif
                                 <td>{{ $employee->created_at }}</td>
                                 <td>{{ $employee->updated_at }}</td>
-                                <td><button class="btn btn-danger btn-sm">Удалить</button></td>
-                            @endforeach
-
+                                <td><a href="/admin/employees/delete/{{ $employee->id }}"
+                                        class="btn btn-danger btn-sm">Удалить</a></td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

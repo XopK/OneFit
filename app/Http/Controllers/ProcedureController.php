@@ -52,23 +52,27 @@ class ProcedureController extends Controller
         }
     }
 
-    public function index(){
+    public function index()
+    {
         $procedure = Procedure::limit(4)->get();
         return view('index', ['procedures' => $procedure]);
     }
 
-    public function infoProcedure(Procedure $id){
+    public function infoProcedure(Procedure $id)
+    {
         return view('procedure', ['data' => $id]);
     }
 
-    public function timeChoise(Procedure $id){
+    public function timeChoise(Procedure $id)
+    {
         return view('time', ['data' => $id]);
     }
 
-    public function ApplicationCreate(Request $request){
+    public function ApplicationCreate(Request $request)
+    {
         Application::create([
             'date' => $request['date'],
-            'time'=> $request['time'],
+            'time' => $request['time'],
             'id_status' => 1,
             'id_procedure' => $request['id_procedure'],
             'id_user' => Auth::user()->id,
@@ -76,8 +80,20 @@ class ProcedureController extends Controller
         return redirect()->back()->with('success', 'Молодец!');
     }
 
-    public function procedures(){
+    public function procedures()
+    {
         $procedure = Procedure::all();
         return view('procedures', ['procedures' => $procedure]);
+    }
+
+    public function edit(Procedure $id)
+    {
+        if ($id->id_user !== null) {
+            $current = User::where('id', $id->id_user)->get()->first();
+        }else{
+            $current = null;
+        }
+        $user = User::where('id_role', 2)->get();
+        return view('admin.editProcedures', ['users' => $user, 'data' => $id, 'currentUser' => $current]);
     }
 }

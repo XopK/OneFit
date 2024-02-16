@@ -150,8 +150,6 @@
                                 <th scope="col">Процедура</th>
                                 <th scope="col">Статус</th>
                                 <th scope="col">Дата подачи</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -164,9 +162,6 @@
                                     <td>{{ $application->procedure->title_procedure }}</td>
                                     <td>{{ $application->status->title_status }}</td>
                                     <td>{{ $application->formatted_datetime }}</td>
-                                    <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                    <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
-
                                 </tr>
                             @empty
                             @endforelse
@@ -184,7 +179,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $procedure->title_procedure }}</h5>
                                     <p class="card-text">{{ $procedure->description }}</p>
-                                    <button class="btn btn-warning">Редактировать</button>
+                                    <a href="/admin/procedures/edit/{{ $procedure->id }}"
+                                        class="btn btn-warning">Редактировать</a>
                                     <button class="btn btn-danger">Удалить</button>
                                 </div>
                             </div>

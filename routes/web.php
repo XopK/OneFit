@@ -3,6 +3,8 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProcedureController;
 use App\Http\Controllers\UserController;
+use App\Models\Procedure;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,9 +42,7 @@ Route::get('/logout', [UserController::class, 'logout']);
 
 Route::get('/admin', [AdminController::class, 'index']);
 
-Route::get('/admin/applications', function () {
-    return view('admin.applications');
-});
+Route::get('/admin/applications', [AdminController::class, 'application']);
 
 Route::get('/admin/procedures', [AdminController::class, 'adminprocedures']);
 
@@ -55,3 +55,7 @@ Route::get('/admin/procedures/add', [ProcedureController::class, 'addProcedure']
 Route::post('/admin/procedures/add/store', [ProcedureController::class, 'storeProcedure']);
 
 Route::post('/admin/addEmployee', [UserController::class, 'addEmployee']);
+
+Route::get('/admin/employees/delete/{id}', [AdminController::class, 'deleteUser']);
+
+Route::get('/admin/procedures/edit/{id}', [ProcedureController::class, 'edit']);
