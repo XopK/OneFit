@@ -15,9 +15,10 @@ class AdminController extends Controller
         $procedures = Procedure::limit(4)->orderBy('created_at', 'desc')->get();
         $application = Application::limit(5)->orderBy('created_at', 'desc')->where('id_status', 1)->get();
         $formattedApplications = $application->map(function ($application) {
-            $application->formatted_datetime = Carbon::parse($application->created_at)->format('j F l H:i');
+            $application->formatted_datetime = Carbon::parse($application->created_at)->isoFormat('D MMMM dddd HH:mm');
             return $application;
         });
+
         return view('admin.index', ['procedures' => $procedures, 'applications' => $application]);
     }
 

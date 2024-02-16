@@ -161,8 +161,8 @@
                                     <td>{{ $application->user->name }} {{ $application->user->surname }}</td>
                                     <td>{{ $application->user->phone }}</td>
                                     <td>{{ $application->date }} {{ $application->time }}</td>
-                                    <td>{{ $application->procedures->tilte_procedure }}</td>
-                                    <td>Ожидание</td>
+                                    <td>{{ $application->procedure->title_procedure }}</td>
+                                    <td>{{ $application->status->title_status }}</td>
                                     <td>{{ $application->formatted_datetime }}</td>
                                     <td><button class="btn btn-success btn-sm">Принять</button></td>
                                     <td><button class="btn btn-danger btn-sm">Отклонить</button></td>

@@ -34,11 +34,13 @@ class Application extends Model
 
     }
 
-    public function status(){
-        return $this->hasOne(Status::class, 'id_status');
+    public function status()
+    {
+        return $this->belongsTo(Status::class, 'id_status');
     }
 
-    // public function procedures(){
-    //     return $this->hasOne(Procedure::class, 'id_procedure');
-    // }
+    public function procedure()
+    {
+        return $this->belongsTo(Procedure::class, 'id_procedure');
+    }
 }

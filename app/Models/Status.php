@@ -16,6 +16,6 @@ class Status extends Model
 
     public function Application()
     {
-        return $this->hasMany(Status::class);
+        return $this->hasMany(Application::class, 'id_status');
     }
 }
