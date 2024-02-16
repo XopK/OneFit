@@ -149,8 +149,6 @@
                                 <th scope="col">Процедура</th>
                                 <th scope="col">Статус</th>
                                 <th scope="col">Дата подачи</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -163,8 +161,6 @@
                                 <td>Массаж</td>
                                 <td>Ожидание</td>
                                 <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -175,8 +171,6 @@
                                 <td>Массаж</td>
                                 <td>Ожидание</td>
                                 <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -187,8 +181,6 @@
                                 <td>Массаж</td>
                                 <td>Ожидание</td>
                                 <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -199,8 +191,6 @@
                                 <td>Массаж</td>
                                 <td>Ожидание</td>
                                 <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -211,8 +201,6 @@
                                 <td>Массаж</td>
                                 <td>Ожидание</td>
                                 <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -223,8 +211,6 @@
                                 <td>Массаж</td>
                                 <td>Ожидание</td>
                                 <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -235,8 +221,6 @@
                                 <td>Массаж</td>
                                 <td>Ожидание</td>
                                 <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -247,8 +231,6 @@
                                 <td>Массаж</td>
                                 <td>Ожидание</td>
                                 <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -259,8 +241,6 @@
                                 <td>Массаж</td>
                                 <td>Ожидание</td>
                                 <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -271,8 +251,6 @@
                                 <td>Массаж</td>
                                 <td>Ожидание</td>
                                 <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -283,8 +261,6 @@
                                 <td>Массаж</td>
                                 <td>Ожидание</td>
                                 <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
                             </tr>
 
                         </tbody>

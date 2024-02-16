@@ -18,7 +18,6 @@ class AdminController extends Controller
             $application->formatted_datetime = Carbon::parse($application->created_at)->format('j F l H:i');
             return $application;
         });
-        dd($application);
         return view('admin.index', ['procedures' => $procedures, 'applications' => $application]);
     }
 

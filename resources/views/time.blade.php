@@ -58,14 +58,22 @@
                                 $application = App\Models\Application::where('date', $date)->where('time', $time)->where('id_procedure', $data->id)->first();
                                 $isBooked = $application ? $application->isBooked() : false;
                             @endphp
-                                @if ($isBooked)
-                                <td class="table-danger">
-                                    <button class="time-btn">{{$time}}</button>
-                                </td>
+                                @if ($isBooked == 1)
+                                    <td class="table-danger">
+                                        <button class="time-btn">{{$time}}</button>
+                                    </td>
+                                @elseif ($isBooked == 2)
+                                    <td class="table-warning">
+                                        <button class="time-btn">{{$time}}</button>
+                                    </td>
+                                @elseif ($isBooked == 3)
+                                    <td class="table-secondary">
+                                        <button class="time-btn">{{$time}}</button>
+                                    </td>
                                 @else
-                                <td class="table-success">
-                                    <button class="time-btn" data-date="{{$date}}" data-time="{{$time}}" data-bs-toggle="modal" data-bs-target="#application" type="button">{{$time}}</button>
-                                </td>
+                                    <td class="table-success">
+                                        <button class="time-btn" data-date="{{$date}}" data-time="{{$time}}" data-bs-toggle="modal" data-bs-target="#application" type="button">{{$time}}</button>
+                                    </td>
                                 @endif
                             @endforeach
                         </tr>

@@ -25,10 +25,13 @@ class Application extends Model
     public function isBooked()
     {
         if ($this->id_status == 1 || $this->id_status == 2) {
-            return true;
-        } else {
-            return false;
+            return 1;
+        } elseif($this->id_status == 3) {
+            return 2;
+        } elseif($this->id_status == 4) {
+            return 3;
         }
+
     }
 
     public function status(){
