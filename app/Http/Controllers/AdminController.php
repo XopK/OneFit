@@ -32,7 +32,7 @@ class AdminController extends Controller
             $usersQuery->orderBy('name', $sort);
         }
 
-        $users = $usersQuery->get();
+        $users = $usersQuery->paginate(5);
         return view('admin.employees', ['employees' => $users]);
     }
 
@@ -43,7 +43,7 @@ class AdminController extends Controller
         if ($status !== null) {
             $applications = $this->filterApplication($status);
         } else {
-            $applications = Application::orderBy('created_at', 'desc')->get();
+            $applications = Application::orderBy('created_at', 'desc')->paginate(5);
             $formattedApplications = $applications->map(function ($application) {
                 $application->formatted_datetime = Carbon::parse($application->created_at)->isoFormat('D MMMM dddd HH:mm');
                 return $application;
@@ -64,7 +64,7 @@ class AdminController extends Controller
 
     public function adminprocedures()
     {
-        $procedures = Procedure::orderBy('created_at', 'desc')->get();
+        $procedures = Procedure::orderBy('created_at', 'desc')->paginate(4);
         return view('admin.procedures', ['procedures' => $procedures]);
     }
 

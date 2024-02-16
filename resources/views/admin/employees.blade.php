@@ -187,6 +187,7 @@
                     </tbody>
                 </table>
             </div>
+            <div class="mt-3">{{ $employees->withQueryString()->links('pagination::bootstrap-5') }}</div>
         </main>
     </div>
 

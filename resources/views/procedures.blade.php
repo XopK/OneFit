@@ -13,7 +13,9 @@
 </head>
 
 <body>
+    <div class="wrapper">
     <x-header></x-header>
+    <div class="main-block">
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 mt-3">
             @foreach ($procedures as $procedure)
@@ -30,6 +32,10 @@
             </div>
             @endforeach
         </div>
+        <div class="mt-3">{{ $procedures->withQueryString()->links('pagination::bootstrap-5') }}</div>
+    </div>
+    </div>
+    <x-footer></x-footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </body>

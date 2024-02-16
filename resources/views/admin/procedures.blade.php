@@ -129,29 +129,28 @@
                 <div class="procedures row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 ">
                     @forelse ($procedures as $procedure)
                         <div class="col">
-                            <a href="#" style="text-decoration: none">
-                                <div class="card adm-card shadow border-0" style="width: 18rem;">
-                                    <img src="/storage/procedure/{{ $procedure->photo_spa }}"
-                                        class="card-img-top ind-card-img" alt="{{ $procedure->photo_spa }}">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $procedure->title_procedure }}</h5>
-                                        <p class="card-text">{{ $procedure->description }}</p>
-                                        <button class="btn btn-warning">Редактировать</button>
-                                        <button class="btn btn-danger">Удалить</button>
-                                    </div>
+                            <div class="card adm-card shadow border-0" style="width: 18rem;">
+                                <img src="/storage/procedure/{{ $procedure->photo_spa }}"
+                                    class="card-img-top ind-card-img" alt="{{ $procedure->photo_spa }}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $procedure->title_procedure }}</h5>
+                                    <p class="card-text">{{ $procedure->description }}</p>
+                                    <a class="btn btn-warning" href="/admin/procedures/edit/{{ $procedure->id }}">Редактировать</a>
+                                    <a class="btn btn-danger" href="/admin/procedures/delete/{{ $procedure->id }}">Удалить</a>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                     @empty
                     @endforelse
                 </div>
             </main>
+            <div class="mt-3">{{ $procedures->withQueryString()->links('pagination::bootstrap-5') }}</div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js"
         integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous">
     </script>
-    
+
 </body>
 
 </html>

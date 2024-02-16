@@ -123,8 +123,9 @@
             <main id="showPage" class="px-md-4">
                 <div class="container">
                     <h1>Редактирование процедуры</h1>
-                    <form action="/admin/procedures/add/store" enctype="multipart/form-data" method="POST">
+                    <form action="/admin/procedures/update" enctype="multipart/form-data" method="POST">
                         @csrf
+                        <input type="hidden" name="id" value="{{$data->id}}">
                         <div class="form-floating mb-3">
                             <input type="text" value="{{$data->title_procedure}}" name="procedure_title"
                                 class="form-control border-warning focus-ring focus-ring-warning" id="floatingInput"
@@ -165,7 +166,6 @@
                                 @empty
                                     <option disabled selected>Пусто</option>
                                 @endforelse
-
                             </select>
                             @error('employee')
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">

@@ -165,7 +165,6 @@
                                 </tr>
                             @empty
                             @endforelse
-
                         </tbody>
                     </table>
                 </div>
@@ -181,7 +180,7 @@
                                     <p class="card-text">{{ $procedure->description }}</p>
                                     <a href="/admin/procedures/edit/{{ $procedure->id }}"
                                         class="btn btn-warning">Редактировать</a>
-                                    <button class="btn btn-danger">Удалить</button>
+                                    <a class="btn btn-danger" href="/admin/procedures/delete/{{ $procedure->id }}">Удалить</a>
                                 </div>
                             </div>
                         </div>

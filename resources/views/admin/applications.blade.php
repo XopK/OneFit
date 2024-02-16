@@ -168,6 +168,7 @@
                     </tbody>
                 </table>
             </div>
+            <div class="mt-3">{{ $applications->withQueryString()->links('pagination::bootstrap-5') }}</div>
         </main>
     </div>
 

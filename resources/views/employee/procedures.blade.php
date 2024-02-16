@@ -37,6 +37,7 @@
                     <h5>Вас еще не прикрепили к процедурам</h5>
                     @endforelse
                 </div>
+                <div class="mt-3">{{ $data->withQueryString()->links('pagination::bootstrap-5') }}</div>
             </div>
         </div>
         <x-footer></x-footer>

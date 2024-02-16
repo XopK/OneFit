@@ -82,7 +82,7 @@ class ProcedureController extends Controller
 
     public function procedures()
     {
-        $procedure = Procedure::all();
+        $procedure = Procedure::paginate(4);
         return view('procedures', ['procedures' => $procedure]);
     }
 
@@ -95,5 +95,42 @@ class ProcedureController extends Controller
         }
         $user = User::where('id_role', 2)->get();
         return view('admin.editProcedures', ['users' => $user, 'data' => $id, 'currentUser' => $current]);
+    }
+
+    public function updateProcedure(Request $request){
+        $request->validate([
+            'procedure_title' => 'required',
+            'description' => 'required',
+            'photo' => 'nullable|image',
+            'employee' => 'required',
+            'cost' => 'required|numeric'
+        ], [
+            'procedure_title.required' => 'Поле обязательно для заполнения!',
+            'description.required' => 'Поле обязательно для заполнения!',
+            'employee.required' => 'Поле обязательно для заполнения!',
+            'cost.required' => 'Поле обязательно для заполнения!',
+            'photo.image' => 'Только изображения!',
+            'cost.numeric' => 'Введите числовое значение!',
+        ]);
+
+        $proc = Procedure::find($request['id']);
+        $photo = $request->file('photo');
+        if(!empty($photo)){
+            $name = $photo->hashName();
+            $patch = $photo->store('public/procedure');
+            $proc->photo_spa = $name;
+        }
+        $proc->title_procedure = $request['procedure_title'];
+        $proc->description = $request['description'];
+        $proc->id_user = $request['employee'];
+        $proc->cost = $request['cost'];
+        $proc->save();
+        return redirect()->back()->with('success', 'Данные обновлены');
+    }
+
+    public function deleteProcedure($id){
+        $dat = Application::where('id_procedure', $id)->delete();
+        $data = Procedure::where('id', $id)->delete();
+        return redirect()->back();
     }
 }

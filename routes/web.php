@@ -61,6 +61,10 @@ Route::get('/admin/employees/delete/{id}', [AdminController::class, 'deleteUser'
 
 Route::get('/admin/procedures/edit/{id}', [ProcedureController::class, 'edit']);
 
+Route::post('/admin/procedures/update', [ProcedureController::class, 'updateProcedure']);
+
+Route::get('/admin/procedures/delete/{id}', [ProcedureController::class, 'deleteProcedure']);
+
 Route::get('/profile', [UserController::class, 'profile']);
 
 Route::post('/user/update', [UserController::class, 'editUser']);
@@ -68,3 +72,7 @@ Route::post('/user/update', [UserController::class, 'editUser']);
 Route::get('/employee', [EmployeeController::class, 'list']);
 
 Route::get('/employee/{id}/applications', [EmployeeController::class, 'listApp']);
+
+Route::get('/employee/decline/{id}', [EmployeeController::class, 'decline']);
+
+Route::get('/employee/accept/{id}', [EmployeeController::class, 'accept']);

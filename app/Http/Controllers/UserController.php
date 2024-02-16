@@ -173,7 +173,7 @@ class UserController extends Controller
     }
 
     public function profile(){
-        $data = Application::where('id_user', Auth::user()->id)->get();
+        $data = Application::where('id_user', Auth::user()->id)->paginate(5);
         return view('profile', ['data' => $data]);
     }
 }

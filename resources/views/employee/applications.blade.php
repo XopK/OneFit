@@ -29,6 +29,8 @@
                             <th scope="col">Дата бронирования</th>
                             <th scope="col">Процедура</th>
                             <th scope="col">Статус</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -38,10 +40,19 @@
                                 <td>{{ $application->date }} {{ $application->time }}</td>
                                 <td>{{ $application->procedure->title_procedure }}</td>
                                 <td>{{ $application->status->title_status }}</td>
+                                @if ($application->id_status == 1)
+                                    <td><a class="acc-btn" href="/employee/accept/{{ $application->id }}">Принять</a></td>
+                                    <td><a class="dec-btn" href="/employee/decline/{{ $application->id }}">Отклонить</a></td>
+                                @else
+                                    <td></td>
+                                    <td></td>
+                                @endif
                             </tr>
                         @empty
                             <tr>
                                 <td>У вас нет записей</td>
+                                <td></td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -50,6 +61,7 @@
                     </tbody>
                 </table>
                 </div>
+                <div class="mt-3">{{ $data->withQueryString()->links('pagination::bootstrap-5') }}</div>
             </div>
         </div>
         <x-footer></x-footer>
