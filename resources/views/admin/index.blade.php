@@ -147,7 +147,6 @@
                                 <th scope="col">Имя пользователя</th>
                                 <th scope="col">Номер телефона</th>
                                 <th scope="col">Дата бронирования</th>
-                                <th scope="col">Дата окнончания</th>
                                 <th scope="col">Процедура</th>
                                 <th scope="col">Статус</th>
                                 <th scope="col">Дата подачи</th>
@@ -156,70 +155,22 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Даня тортиков</td>
-                                <td>+789987558</td>
-                                <td>21.02.2024 12:00</td>
-                                <td>21.02.2024 15:00</td>
-                                <td>Массаж</td>
-                                <td>Ожидание</td>
-                                <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
+                            @forelse ($applications as $application)
+                                <tr>
+                                    <td>{{ $application->id }}</td>
+                                    <td>{{ $application->user->name }} {{ $application->user->surname }}</td>
+                                    <td>{{ $application->user->phone }}</td>
+                                    <td>{{ $application->date }} {{ $application->time }}</td>
+                                    <td>{{ $application->procedures->tilte_procedure }}</td>
+                                    <td>Ожидание</td>
+                                    <td>{{ $application->formatted_datetime }}</td>
+                                    <td><button class="btn btn-success btn-sm">Принять</button></td>
+                                    <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
 
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Даня тортиков</td>
-                                <td>+789987558</td>
-                                <td>21.02.2024 12:00</td>
-                                <td>21.02.2024 15:00</td>
-                                <td>Массаж</td>
-                                <td>Ожидание</td>
-                                <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
+                                </tr>
+                            @empty
+                            @endforelse
 
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Даня тортиков</td>
-                                <td>+789987558</td>
-                                <td>21.02.2024 12:00</td>
-                                <td>21.02.2024 15:00</td>
-                                <td>Массаж</td>
-                                <td>Ожидание</td>
-                                <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
-
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Даня тортиков</td>
-                                <td>+789987558</td>
-                                <td>21.02.2024 12:00</td>
-                                <td>21.02.2024 15:00</td>
-                                <td>Массаж</td>
-                                <td>Ожидание</td>
-                                <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
-
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Даня тортиков</td>
-                                <td>+789987558</td>
-                                <td>21.02.2024 12:00</td>
-                                <td>21.02.2024 15:00</td>
-                                <td>Массаж</td>
-                                <td>Ожидание</td>
-                                <td>20.02.2024</td>
-                                <td><button class="btn btn-success btn-sm">Принять</button></td>
-                                <td><button class="btn btn-danger btn-sm">Отклонить</button></td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>

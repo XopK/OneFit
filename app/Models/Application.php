@@ -30,4 +30,12 @@ class Application extends Model
             return false;
         }
     }
+
+    public function status(){
+        return $this->hasOne(Status::class, 'id_status');
+    }
+
+    // public function procedures(){
+    //     return $this->hasOne(Procedure::class, 'id_procedure');
+    // }
 }

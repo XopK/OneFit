@@ -11,6 +11,11 @@ class Status extends Model
     protected $fillable = [
         'title_status',
     ];
-    
+
     use HasFactory;
+
+    public function Application()
+    {
+        return $this->hasMany(Status::class);
+    }
 }

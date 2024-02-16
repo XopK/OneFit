@@ -23,4 +23,8 @@ class Procedure extends Model
     {
         return $this->hasOne(User::class, 'id_user');
     }
+
+    public function application(){
+        return $this->hasMany(Application::class, 'id_procedure');
+    }
 }
