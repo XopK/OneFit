@@ -130,6 +130,7 @@
                         Статусы
                     </button>
                     <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/admin/applications">Все</a></li>
                         <li><a class="dropdown-item" href="/admin/applications?status=1">Ожидание</a></li>
                         <li><a class="dropdown-item" href="/admin/applications?status=2">Принято</a></li>
                         <li><a class="dropdown-item" href="/admin/applications?status=3">Отклонено</a></li>
@@ -168,7 +169,11 @@
                     </tbody>
                 </table>
             </div>
-            <div class="mt-3">{{ $applications->withQueryString()->links('pagination::bootstrap-5') }}</div>
+            @if ($applications == null)
+                <div class="mt-3">{{ $applications->withQueryString()->links('pagination::bootstrap-5') }}</div>
+            @else
+            @endif
+
         </main>
     </div>
 

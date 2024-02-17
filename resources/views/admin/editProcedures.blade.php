@@ -120,106 +120,107 @@
     </header>
 
     <div class="container-fluid">
-            <main id="showPage" class="px-md-4">
-                <div class="container">
-                    <h1>Редактирование процедуры</h1>
-                    <form action="/admin/procedures/update" enctype="multipart/form-data" method="POST">
-                        @csrf
-                        <input type="hidden" name="id" value="{{$data->id}}">
-                        <div class="form-floating mb-3">
-                            <input type="text" value="{{$data->title_procedure}}" name="procedure_title"
-                                class="form-control border-warning focus-ring focus-ring-warning" id="floatingInput"
-                                placeholder="Название процедуры">
-                            <label for="floatingInput">Название процедуры</label>
-                            @error('procedure_title')
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    {{ $message }}
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                        aria-label="Close"></button>
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Описание</label>
-                            <textarea name="description" class="form-control border-warning focus-ring focus-ring-warning"
-                                id="exampleFormControlTextarea1" rows="8">{{$data->description}}</textarea>
-                            @error('description')
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    {{ $message }}
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                        aria-label="Close"></button>
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="mb-3">
-                            <select name="employee"
-                                class="form-select form-select-lg border-warning focus-ring focus-ring-warning"
-                                aria-label="Default select example">
-                                @if ($currentUser !== null)
-                                <option disabled selected>{{$currentUser->name}} {{$currentUser->surname}}</option>
-                                @else
+        <main id="showPage" class="px-md-4">
+            <div class="container">
+                <h1>Редактирование процедуры</h1>
+                <form action="/admin/procedures/update" enctype="multipart/form-data" method="POST">
+                    @csrf
+                    <input type="hidden" name="id" value="{{ $data->id }}">
+                    <div class="form-floating mb-3">
+                        <input type="text" value="{{ $data->title_procedure }}" name="procedure_title"
+                            class="form-control border-warning focus-ring focus-ring-warning" id="floatingInput"
+                            placeholder="Название процедуры">
+                        <label for="floatingInput">Название процедуры</label>
+                        @error('procedure_title')
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Описание</label>
+                        <textarea name="description" class="form-control border-warning focus-ring focus-ring-warning"
+                            id="exampleFormControlTextarea1" rows="8">{{ $data->description }}</textarea>
+                        @error('description')
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <select name="employee"
+                            class="form-select form-select-lg border-warning focus-ring focus-ring-warning"
+                            aria-label="Default select example">
+                            @if ($currentUser !== null)
+                                <option value="{{ $currentUser->id }}"selected>{{ $currentUser->name }}
+                                    {{ $currentUser->surname }}</option>
+                            @else
                                 <option disabled selected>Выберите сотрудника</option>
-                                @endif
-                                @forelse ($users as $user)
-                                    <option value="{{ $user->id }}">{{ $user->name }} {{ $user->surname }}
-                                    </option>
-                                @empty
-                                    <option disabled selected>Пусто</option>
-                                @endforelse
-                            </select>
-                            @error('employee')
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    {{ $message }}
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                        aria-label="Close"></button>
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="mb-3">
-                            <label for="formFile" class="form-label">Выберите фото</label>
-                            <input name="photo" class="form-control border-warning focus-ring focus-ring-warning"
-                                type="file" id="formFile">
-                            @error('photo')
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    {{ $message }}
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                        aria-label="Close"></button>
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input name="cost" value="{{$data->cost}}" type="number"
-                                class="form-control border-warning focus-ring focus-ring-warning" id="floatingInput"
-                                placeholder="Цена процедуры">
-                            <label for="floatingInput">Цена процедуры</label>
-                            @error('cost')
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    {{ $message }}
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                        aria-label="Close"></button>
-                                </div>
-                            @enderror
-                        </div>
-                        <button type="submit" class="btn btn-warning">Добавить</button>
-                    </form>
-                    @if (session('success'))
-                        <div class="alert alert-success alert-dismissible mt-3">
-                            <div class="alert-text">
-                                {{ session('success') }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            @endif
+                            @forelse ($users as $user)
+                                <option value="{{ $user->id }}">{{ $user->name }} {{ $user->surname }}
+                                </option>
+                            @empty
+                                <option disabled selected>Пусто</option>
+                            @endforelse
+                        </select>
+                        @error('employee')
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
                             </div>
-                        </div>
-                    @endif
-                    @if (session('error'))
-                        <div class="alert alert-danger alert-dismissible mt-3">
-                            <div class="alert-text">
-                                {{ session('error') }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Выберите фото</label>
+                        <input name="photo" class="form-control border-warning focus-ring focus-ring-warning"
+                            type="file" id="formFile">
+                        @error('photo')
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
                             </div>
+                        @enderror
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input name="cost" value="{{ $data->cost }}" type="number"
+                            class="form-control border-warning focus-ring focus-ring-warning" id="floatingInput"
+                            placeholder="Цена процедуры">
+                        <label for="floatingInput">Цена процедуры</label>
+                        @error('cost')
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        @enderror
+                    </div>
+                    <button type="submit" class="btn btn-warning">Добавить</button>
+                </form>
+                @if (session('success'))
+                    <div class="alert alert-success alert-dismissible mt-3">
+                        <div class="alert-text">
+                            {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                         </div>
-                    @endif
-                </div>
-            </main>
+                    </div>
+                @endif
+                @if (session('error'))
+                    <div class="alert alert-danger alert-dismissible mt-3">
+                        <div class="alert-text">
+                            {{ session('error') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    </div>
+                @endif
+            </div>
+        </main>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js"

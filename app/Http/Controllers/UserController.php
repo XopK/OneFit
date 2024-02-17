@@ -136,8 +136,10 @@ class UserController extends Controller
                 'password' => $request->password,
             ])
         ) {
-            if (Auth::user()->id_role == 1 || Auth::user()->id_role == 2) {
+            if (Auth::user()->id_role == 1) {
                 return redirect('/admin')->with('success', 'Успешная авторизаиця!');
+            } elseif (Auth::user()->id_role == 2) {
+                return redirect('/employee')->with('success', 'Успешная авторизация!');
             } else {
                 return redirect('/')->with('success', 'Успешная авторизация!');
             }
@@ -145,7 +147,8 @@ class UserController extends Controller
             return redirect()->back()->with('error', 'Ошибка авторизации!');
         }
     }
-    public function editUser(Request $request){
+    public function editUser(Request $request)
+    {
         $request->validate([
             'name' => 'required',
             'surname' => 'required',
@@ -172,7 +175,8 @@ class UserController extends Controller
         return redirect()->back()->with('success', 'Данные обновлены');
     }
 
-    public function profile(){
+    public function profile()
+    {
         $data = Application::where('id_user', Auth::user()->id)->paginate(5);
         return view('profile', ['data' => $data]);
     }

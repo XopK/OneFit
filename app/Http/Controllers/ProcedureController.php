@@ -102,12 +102,10 @@ class ProcedureController extends Controller
             'procedure_title' => 'required',
             'description' => 'required',
             'photo' => 'nullable|image',
-            'employee' => 'required',
             'cost' => 'required|numeric'
         ], [
             'procedure_title.required' => 'Поле обязательно для заполнения!',
             'description.required' => 'Поле обязательно для заполнения!',
-            'employee.required' => 'Поле обязательно для заполнения!',
             'cost.required' => 'Поле обязательно для заполнения!',
             'photo.image' => 'Только изображения!',
             'cost.numeric' => 'Введите числовое значение!',
